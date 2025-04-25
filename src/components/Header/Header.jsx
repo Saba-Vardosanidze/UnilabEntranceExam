@@ -98,7 +98,7 @@ const Header = () => {
             onChange={(event) => setSearchValue(event.target.value)}
             value={searchValue}
             type="search"
-            className="hidden lg:flex bg-[var(--grayColorForInput)] px-[52px] rounded-[62px] outline-none w-full max-w-[577px] min-h-[48px]"
+            className="hidden [&::-webkit-search-cancel-button]:hidden lg:flex bg-[var(--grayColorForInput)] px-[52px] rounded-[62px] outline-none w-full max-w-[577px] min-h-[48px] appearance-none"
             placeholder="Search for products..."
           />
           <img
