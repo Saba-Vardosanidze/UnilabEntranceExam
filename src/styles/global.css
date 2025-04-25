@@ -2,4 +2,6 @@
 :root {
   --colorWhite: white;
   --colorBlack: black;
+  --grayColorForInput: #f0f0f0;
+  --paragraph-color: #8d8d8d;
 }
