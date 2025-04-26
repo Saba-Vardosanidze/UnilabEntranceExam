@@ -111,10 +111,10 @@ const Header = () => {
 
           <button
             onClick={inputCleaner}
-            className="top-[15px] left-[16px] absolute cursor-pointer"
+            className="top-[15px] left-[16px] absolute"
           >
             <img
-              className={`w-[20px] h-[20px] transition duration-300 ease-in-out  ${
+              className={`w-[20px] h-[20px]  ${
                 searchValue ? "block" : "hidden"
               }`}
               src="./images/svg/xIcon.svg"
