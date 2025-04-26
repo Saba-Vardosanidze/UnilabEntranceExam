@@ -15,7 +15,7 @@ const HeroSection = () => {
             <button className="bg-[var(--colorBlack)] hover:bg-[var(--colorBlackHover)] rounded-[62px] w-full max-w-[358px] lg:max-w-[210px] min-h-[52px] text-[var(--colorWhite)] transition-all duration-300 ease-in-out cursor-pointer">
               Shop Now
             </button>
-            <div className="flex flex-wrap justify-center lg:justify-start gap-[27px] lg:gap-[32px] mt-[20px] lg:mt-[48px] font-[var(--font-satoshi)]">
+            <div className="flex flex-wrap justify-center lg:justify-start gap-[27px] lg:gap-[17px] mt-[20px] lg:mt-[48px] font-[var(--font-satoshi)]">
               <div>
                 <p className="font-bold text-[24px] lg:text-[40px]">200+</p>
                 <p className="text-[12px] text-[var(--colorBlackOpacity)] lg:text-[16px]">
