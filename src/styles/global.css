@@ -2,6 +2,9 @@
 :root {
   --colorWhite: white;
   --colorBlack: black;
+  --grayColorForInput: #f0f0f0;
+  --paragraph-color: #8d8d8d;
+
   --colorBlackHover: #272727f3;
   --colorBlackOpacity: #00000060;
   --colorBlackborder: #00000010;
