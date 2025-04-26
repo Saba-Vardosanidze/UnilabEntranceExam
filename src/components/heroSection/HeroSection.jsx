@@ -1,7 +1,7 @@
 const HeroSection = () => {
   return (
     <div className="flex justify-center bg-[var(--heroBgColor)] min-h-[663px]">
-      <div className="flex lg:flex-row flex-col px-[16px] lg:px-[80px] max-w-[1440px]">
+      <div className="flex lg:flex-row flex-col justify-between m-auto px-[16px] lg:px-[100px] w-full max-w-[1440px]">
         <div className="flex justify-center mt-[40px] lg:mt-[0px]">
           <div className="flex flex-col lg:justify-center">
             <h2 className="max-w-[315px] lg:max-w-[577px] text-[var(--font-integralcf)] font-bold text-[36px] lg:text-[64px] leading-[34px] lg:leading-[64px]">
@@ -43,7 +43,7 @@ const HeroSection = () => {
           <div className="relative">
             <img src="images/png/modelExample.png" alt="model" />
             <img
-              className="top-[34px] lg:top-[56px] right-[25px] lg:right-[51px] absolute w-[76px] lg:w-[104px]"
+              className="top-[34px] lg:top-[56px] right-[25px] lg:right-[0px] absolute w-[76px] lg:w-[104px]"
               src="images/png/star.png"
               alt="star img"
             />
