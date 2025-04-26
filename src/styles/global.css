@@ -2,4 +2,22 @@
 :root {
   --colorWhite: white;
   --colorBlack: black;
+  --colorBlackHover: #272727f3;
+  --colorBlackOpacity: #00000060;
+  --colorBlackborder: #00000010;
+
+  --heroBgColor: #f2f0f1;
+}
+/* fonts */
+:root {
+  --font-integralcf: "integralcf", Arial;
+  --font-satoshi: "SatoshI", Arial;
+}
+@font-face {
+  font-family: "integralcf";
+  src: url("./fonts/Fontspring-DEMO-integralcf-regular.otf");
+}
+@font-face {
+  font-family: "SatoshI";
+  src: url("./fonts/Satoshi-Regular.otf");
 }

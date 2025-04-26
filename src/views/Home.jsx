@@ -1,3 +1,4 @@
+import HeroSection from "../components/heroSection/HeroSection";
 import PromoBanner from "../components/PromoBanner";
 
 const Home = () => {
@@ -5,6 +6,7 @@ const Home = () => {
     <div className="flex flex-col min-h-[100dvh]">
       <main>
         <PromoBanner />
+        <HeroSection />
       </main>
     </div>
   );
