@@ -7,17 +7,18 @@
   --colorBlackborder: #00000010;
 
   --heroBgColor: #f2f0f1;
-}
-/* fonts */
-:root {
+
+  /* fonts */
   --font-integralcf: "integralcf", Arial;
   --font-satoshi: "SatoshI", Arial;
 }
+
 @font-face {
   font-family: "integralcf";
-  src: url("./fonts/Fontspring-DEMO-integralcf-regular.otf");
+  src: url("/Fontspring-DEMO-integralcf-regular.otf");
 }
+
 @font-face {
-  font-family: "SatoshI";
-  src: url("./fonts/Satoshi-Regular.otf");
+  font-family: "Satoshi";
+  src: url("/Satoshi-Regular.otf");
 }
