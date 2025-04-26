@@ -4,4 +4,24 @@
   --colorBlack: black;
   --grayColorForInput: #f0f0f0;
   --paragraph-color: #8d8d8d;
+
+  --colorBlackHover: #272727f3;
+  --colorBlackOpacity: #00000060;
+  --colorBlackborder: #00000010;
+
+  --heroBgColor: #f2f0f1;
+
+  /* fonts */
+  --font-integralcf: "integralcf", Arial;
+  --font-satoshi: "SatoshI", Arial;
+}
+
+@font-face {
+  font-family: "integralcf";
+  src: url("/Fontspring-DEMO-integralcf-regular.otf");
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("/Satoshi-Regular.otf");
 }
