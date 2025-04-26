@@ -2,9 +2,9 @@ import React from "react";
 
 const HeroSection = () => {
   return (
-    <div className="flex justify-center lg:items-center bg-[var(--heroBgColor)] min-h-[663px]">
-      <div className="flex lg:flex-row flex-col px-[16px] max-w-[1440px]">
-        <div className="">
+    <div className="flex justify-center bg-[var(--heroBgColor)] min-h-[663px]">
+      <div className="flex lg:flex-row flex-col px-[16px] lg:px-[80px] max-w-[1440px]">
+        <div>
           <h2 className="max-w-[315px] lg:max-w-[577px] text-[var(--font-integralcf)] font-bold text-[36px] lg:text-[64px] leading-[34px] lg:leading-[64px]">
             FIND CLOTHES THAT MATCHES YOUR STYLE
           </h2>
@@ -16,7 +16,7 @@ const HeroSection = () => {
           <button className="bg-[var(--colorBlack)] hover:bg-[var(--colorBlackHover)] rounded-[62px] w-full max-w-[358px] lg:max-w-[210px] min-h-[52px] text-[var(--colorWhite)] transition-all duration-300 ease-in-out cursor-pointer">
             Shop Now
           </button>
-          <div className="flex flex-wrap justify-center lg:justify-start gap-[27px] lg:gap-[32px] mt-[20px] lg:mt-[48px] font-[var(--font-satoshi)]">
+          <div className="flex flex-wrap lg:justify-start gap-[27px] lg:gap-[32px] mt-[20px] lg:mt-[48px] font-[var(--font-satoshi)]">
             <div>
               <p className="font-bold text-[24px] lg:text-[40px]">200+</p>
               <p className="text-[12px] text-[var(--colorBlackOpacity)] lg:text-[16px]">
@@ -39,7 +39,9 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
-        <div></div>
+        <div>
+          <img src="images/png/modelExample.png" alt="" />
+        </div>
       </div>
     </div>
   );
