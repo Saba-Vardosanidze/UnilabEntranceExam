@@ -39,9 +39,7 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
-        <div>
-          <img src="images/png/modelExample.png" alt="" />
-        </div>
+        <div></div>
       </div>
     </div>
   );
