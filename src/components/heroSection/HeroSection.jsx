@@ -40,7 +40,19 @@ const HeroSection = () => {
           </div>
         </div>
         <div className="flex items-end h-[100%]">
-          <img src="images/png/modelExample.png" alt="model" />
+          <div className="relative">
+            <img src="images/png/modelExample.png" alt="model" />
+            <img
+              className="top-[34px] lg:top-[56px] right-[25px] lg:right-[51px] absolute w-[76px] lg:w-[104px]"
+              src="images/png/star.png"
+              alt="star img"
+            />
+            <img
+              className="top-[131px] lg:top-[294px] lg:right-[81px] left-[10px] absolute w-[44px] lg:w-[56px]"
+              src="images/png/star.png"
+              alt="star img"
+            />
+          </div>
         </div>
       </div>
     </div>
