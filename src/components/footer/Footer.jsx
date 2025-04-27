@@ -3,11 +3,11 @@ import { footerLists, paymentMethod } from "../../data/footerLists";
 
 const Footer = () => {
   return (
-    <footer className="bg-[var(--grayColorForInput)] mt-[184px] px-[16px] pt-[186px] pb-[77px] w-full">
+    <footer className="bg-[var(--grayColorForInput)] mt-[184px] px-[16px] pt-[189px] lg:pt-[140px] pb-[77px] w-full">
       <div className="m-auto lg:px-[100px] w-full lg:max-w-[1440px]">
-        <div className="flex flex-col">
+        <div className="flex lg:flex-row flex-col gap-x-[113px]">
           <div>
-            <div>
+            <div className="max-w-[248px]">
               <img
                 src="./images/svg/Logo.svg"
                 alt="site Logo"
@@ -41,17 +41,17 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          <div className="flex flex-wrap gap-x-[89px] gap-y-[24px] mt-[24px]">
+          <div className="flex flex-wrap gap-x-[89px] gap-y-[24px] lg:gap-x-[113px] mt-[24px] lg:mt-[0px]">
             {footerLists.map((eachElements, index) => (
               <div key={eachElements.index}>
-                <h3 className="font-medium text-[14px]">
+                <h3 className="font-medium text-[14px] lg:text-[16px]">
                   {eachElements.title}
                 </h3>
                 <ul className="flex flex-col gap-[16px] mt-[16px]">
                   {eachElements.links.map((link, index) => (
                     <li
                       key={index}
-                      className="text-[14px] text-[var(--colorBlackOpacity)]"
+                      className="text-[14px] text-[var(--colorBlackOpacity)] lg:text-[16px]"
                     >
                       <a href={link.href}>{link.value}</a>
                     </li>
@@ -62,7 +62,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="bg-[var(--colorBlackborder)] mt-[40px] mb-[16px] h-[1px]"></div>
-        <div className="flex flex-col items-center gap-y-[16px] text-[14px] text-[var(--colorBlackOpacity)]">
+        <div className="flex lg:flex-row flex-col justify-between items-center gap-y-[16px] text-[14px] text-[var(--colorBlackOpacity)]">
           <p>Shop.co © 2000-2023, All Rights Reserved</p>
           <div className="flex">
             {paymentMethod.map((eachElements) => (
