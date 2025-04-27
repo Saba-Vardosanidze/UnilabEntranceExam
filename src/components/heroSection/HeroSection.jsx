@@ -1,7 +1,7 @@
 const HeroSection = () => {
   return (
     <div className="flex justify-center bg-[var(--heroBgColor)] min-h-[663px]">
-      <div className="flex lg:flex-row flex-col justify-between m-auto px-[16px] lg:px-[100px] w-full max-w-[1440px]">
+      <div className="flex lg:flex-row flex-col justify-between px-[16px] lg:px-[100px] w-full max-w-[1440px]">
         <div className="flex justify-center mt-[40px] lg:mt-[0px]">
           <div className="flex flex-col lg:justify-center">
             <h2 className="max-w-[315px] lg:max-w-[577px] text-[var(--font-integralcf)] font-bold text-[36px] lg:text-[64px] leading-[34px] lg:leading-[64px]">

@@ -1,6 +1,7 @@
 import Header from "../components/Header/Header";
 import HeroSection from "../components/heroSection/HeroSection";
 import PromoBanner from "../components/PromoBanner/PromoBanner";
+import Slider from "../components/slider/Slider";
 
 const Home = () => {
   return (
@@ -9,6 +10,7 @@ const Home = () => {
         <PromoBanner />
         <Header />
         <HeroSection />
+        <Slider />
       </main>
     </div>
   );

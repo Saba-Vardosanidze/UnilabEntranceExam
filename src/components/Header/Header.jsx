@@ -111,7 +111,7 @@ const Header = () => {
 
           <button
             onClick={inputCleaner}
-            className="top-[15px] left-[16px] absolute"
+            className="top-[15px] left-[16px] absolute cursor-pointer"
           >
             <img
               className={`w-[20px] h-[20px]  ${
