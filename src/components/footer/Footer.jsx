@@ -51,7 +51,7 @@ const Footer = () => {
                   {eachElements.links.map((link, index) => (
                     <li
                       key={index}
-                      className="text-[14px] text-[var(--colorBlackOpacity)] lg:text-[16px]"
+                      className="text-[14px] text-[var(--colorBlackOpacity)] lg:text-[16px] hover:text-[var(--colorBlack)] transition-all duration-300 ease-in-out"
                     >
                       <a href={link.href}>{link.value}</a>
                     </li>
