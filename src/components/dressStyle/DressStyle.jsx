@@ -5,7 +5,7 @@ const DressStyle = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   return (
-    <div className="m-auto mt-[80px] px-[100px] max-w-[1440px]">
+    <div className="m-auto mt-[50px] lg:mt-[80px] px-[16px] lg:px-[100px] max-w-[1440px]">
       <div className="flex flex-col items-center bg-[var(--heroBgColor)] m-auto px-[20px] lg:px-[0px] pt-[40px] lg:pt-[70px] pb-[27px] lg:pb-[76px] rounded-[20px] overflow-hidden">
         <h2 className="mb-[28px] font-bold text-[32px] lg:text-[58px] text-center">
           BROWSE BY DRESS STYLE
