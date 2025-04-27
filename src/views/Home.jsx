@@ -1,3 +1,4 @@
+import DressStyle from "../components/dressStyle/DressStyle";
 import Header from "../components/Header/Header";
 import HeroSection from "../components/heroSection/HeroSection";
 import PromoBanner from "../components/PromoBanner/PromoBanner";
@@ -10,6 +11,7 @@ const Home = () => {
         <PromoBanner />
         <Header />
         <HeroSection />
+        <DressStyle />
         <Slider />
       </main>
     </div>
