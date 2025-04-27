@@ -39,7 +39,7 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
-        <div className="flex items-end h-[100%]">
+        <div className="flex items-end m-auto h-[100%]">
           <div className="relative">
             <img src="images/png/modelExample.png" alt="model" />
             <img
