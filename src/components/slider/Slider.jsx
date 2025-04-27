@@ -16,7 +16,9 @@ const Slider = () => {
   return (
     <div className="m-auto mt-[80px] max-w-[1440px]">
       <div className="flex justify-between items-end mb-6 px-[16px] lg:px-[100px]">
-        <h2 className="font-bold text-[32px]">OUR HAPPY CUSTOMERS</h2>
+        <h2 className="font-bold text-[32px] lg:text-[48px]">
+          OUR HAPPY CUSTOMERS
+        </h2>
         <div className="flex gap-[16px]">
           <button onClick={scrollPrev} className="embla__prev">
             <img
@@ -35,28 +37,30 @@ const Slider = () => {
         </div>
       </div>
 
-      <div className="flex overflow-hidden embla" ref={emblaRef}>
+      <div className="overflow-hidden embla" ref={emblaRef}>
         <div className="flex embla__container">
           {slider.map((eachElement, index) => (
             <div
               key={index}
-              className="flex-[0_0_100%] m-auto mr-[16px] px-[24px] py-[24px] border border-[var(--colorBlackborder)] rounded-[20px] w-full max-w-[358px] lg:max-w-[400px] min-h-[186px] lg:min-h-[240px] embla__slide"
+              className="flex-[0_0_auto] mr-[16px] lg:mr-[20px] px-[24px] lg:px-[32px] py-[24px] lg:py-[28px] border border-[var(--colorBlackborder)] rounded-[20px] w-[358px] lg:w-[400px] min-h-[186px] lg:min-h-[240px] embla__slide"
             >
               <div>
                 <img
-                  className="w-full max-w-[118px]"
+                  className="w-full max-w-[118px] lg:max-w-[138px]"
                   src={eachElement.rate}
                   alt="Customer rate"
                 />
-                <div className="mt-[12px] mb-[8px]">
-                  <div className="flex items-center gap-[4px]">
-                    <p className="font-bold">{eachElement.userName}</p>
+                <div>
+                  <div className="flex items-center gap-[4px] mt-[12px] lg:mt-[15px] mb-[8px] lg:mb-[12px]">
+                    <p className="font-bold text-[20px]">
+                      {eachElement.userName}
+                    </p>
                     <img
                       src={eachElement.verification}
                       alt="Verification badge"
                     />
                   </div>
-                  <p className="text-[14px] text-[var(--colorBlackOpacity)]">
+                  <p className="text-[14px] text-[var(--colorBlackOpacity)] lg:text-[16px]">
                     {eachElement.description}
                   </p>
                 </div>
