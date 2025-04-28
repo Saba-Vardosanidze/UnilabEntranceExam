@@ -1,9 +1,10 @@
 import { FaTwitter, FaFacebookF, FaInstagram, FaGithub } from "react-icons/fa";
 import { footerLists, paymentMethod } from "../../data/footerLists";
 
-const Footer = () => {
+const Footer = ({ children }) => {
   return (
-    <footer className="bg-[var(--grayColorForInput)] mt-[184px] px-[16px] pt-[189px] lg:pt-[140px] pb-[77px] w-full">
+    <footer className="relative bg-[var(--grayColorForInput)] mt-[184px] px-[16px] pt-[189px] lg:pt-[140px] pb-[77px] w-full">
+      {children}
       <div className="m-auto lg:px-[100px] w-full lg:max-w-[1440px]">
         <div className="flex lg:flex-row flex-col gap-x-[113px]">
           <div>
