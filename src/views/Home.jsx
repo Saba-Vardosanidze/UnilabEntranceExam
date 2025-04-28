@@ -1,4 +1,5 @@
 import Arrivals from "../components/arrivals/Arrivals";
+import BrandSlider from "../components/brandSlider/BrandSlider";
 import DressStyle from "../components/dressStyle/DressStyle";
 import Footer from "../components/footer/Footer";
 import Header from "../components/Header/Header";
@@ -15,6 +16,7 @@ const Home = () => {
         <PromoBanner />
         <Header />
         <HeroSection />
+        <BrandSlider />
         <Arrivals />
         <Selling />
         <DressStyle />
