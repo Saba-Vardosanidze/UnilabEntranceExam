@@ -1,3 +1,4 @@
+import Arrivals from "../components/arrivals/Arrivals";
 import DressStyle from "../components/dressStyle/DressStyle";
 import Footer from "../components/footer/Footer";
 import Header from "../components/Header/Header";
@@ -13,6 +14,7 @@ const Home = () => {
         <PromoBanner />
         <Header />
         <HeroSection />
+        <Arrivals />
         <DressStyle />
         <Slider />
       </main>
