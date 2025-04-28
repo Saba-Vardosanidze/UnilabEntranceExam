@@ -11,7 +11,7 @@ const DressStyle = () => {
           BROWSE BY DRESS STYLE
         </h2>
         <div className="flex flex-wrap justify-center gap-[16px] lg:gap-[20px]">
-          <div className="relative flex justify-end bg-[var(--colorWhite)] hover:bg-[var(--colorWhiteHover)] rounded-[20px] w-full max-w-[310px] lg:max-w-[407px] min-h-[190px] lg:min-h-[289px] overflow-hidden cursor-pointer">
+          <div className="relative flex justify-end bg-[var(--colorWhite)] hover:bg-[var(--colorWhiteHover)] rounded-[20px] w-full max-w-[310px] lg:max-w-[407px] h-[190px] lg:min-h-[289px] overflow-hidden cursor-pointer">
             <img src="images/png/Adesigne.png" alt="designe" />
             <p className="top-[16px] left-[24px] absolute font-bold text-[24px]">
               Casual
@@ -40,7 +40,7 @@ const DressStyle = () => {
               Casual
             </p>
           </motion.div>
-          <div className="relative flex justify-end bg-[var(--colorWhite)] hover:bg-[var(--colorWhiteHover)] rounded-[20px] w-full max-w-[310px] lg:max-w-[407px] min-h-[190px] lg:min-h-[289px] overflow-hidden cursor-pointer">
+          <div className="relative flex justify-end bg-[var(--colorWhite)] hover:bg-[var(--colorWhiteHover)] rounded-[20px] w-full max-w-[310px] lg:max-w-[407px] h-[190px] lg:min-h-[289px] overflow-hidden cursor-pointer">
             <img src="images/png/Ddesigne.png" alt="designe" />
             <p className="top-[16px] left-[24px] absolute font-bold text-[24px]">
               Casual
