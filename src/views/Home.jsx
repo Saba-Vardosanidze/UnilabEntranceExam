@@ -2,6 +2,7 @@ import DressStyle from "../components/dressStyle/DressStyle";
 import Footer from "../components/footer/Footer";
 import Header from "../components/Header/Header";
 import HeroSection from "../components/heroSection/HeroSection";
+import Offers from "../components/offers/Offers";
 import PromoBanner from "../components/PromoBanner/PromoBanner";
 import Slider from "../components/slider/Slider";
 
@@ -15,7 +16,9 @@ const Home = () => {
         <DressStyle />
         <Slider />
       </main>
-      <Footer />
+      <Footer>
+        <Offers />
+      </Footer>
     </div>
   );
 };
