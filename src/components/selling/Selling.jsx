@@ -10,7 +10,7 @@ const fetchCards = async () => {
   return response.json();
 };
 
-const Arrivals = () => {
+const Selling = () => {
   const [emblaRef] = useEmblaCarousel({ loop: false });
 
   const { data, isLoading, error } = useQuery({
@@ -24,8 +24,8 @@ const Arrivals = () => {
   return (
     <div className="flex flex-col items-center">
       <div className="flex flex-col items-center lg:px-[100px] pl-[16px] w-full max-w-[1440px]">
-        <h2 className="mt-[50px] lg:mt-[72px] mb-[32px] font-bold text-[32px] lg:text-[48px]">
-          NEW ARRIVALS
+        <h2 className="mt-[40px] lg:mt-[64px] mb-[32px] font-bold text-[32px] lg:text-[48px]">
+          top selling
         </h2>
         <div
           className="max-w-[100%] overflow-hidden transition-all duration-500 ease-in-out embla"
@@ -33,7 +33,9 @@ const Arrivals = () => {
         >
           <div className="flex gap-x-[16px] embla__container">
             {data
-              .filter((eachElement) => eachElement.id <= 4)
+              .filter(
+                (eachElement) => eachElement.id >= 5 && eachElement.id <= 8
+              )
               .map((eachElement) => (
                 <div key={eachElement.id} className="embla__slide">
                   <div className="flex justify-center items-center bg-[var(--productContainerColor)] hover:bg-[var(--productContainerColorHover)] rounded-[14px] w-[198px] lg:w-[295px] h-[200px] lg:min-h-[298px] transition-all duration-300 ease-in-out cursor-pointer">
@@ -81,10 +83,9 @@ const Arrivals = () => {
         <button className="flex justify-center items-center hover:bg-[var(--colorBlack)] mt-[24px] lg:mt-[36px] mb-[40px] lg:mb-[64px] border border-[var(--colorBlackborder)] rounded-[62px] w-full max-w-[358px] lg:max-w-[218px] min-h-[46px] lg:min-h-[52px] hover:text-[var(--colorWhite)] transition-all duration-300 ease-in-out cursor-pointer">
           View All
         </button>
-        <div className="bg-[var(--colorBlackborder)] mt-[40px] mb-[16px] w-full h-[1px]"></div>
       </div>
     </div>
   );
 };
 
-export default Arrivals;
+export default Selling;

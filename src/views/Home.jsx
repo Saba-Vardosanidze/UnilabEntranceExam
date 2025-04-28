@@ -5,6 +5,7 @@ import Header from "../components/Header/Header";
 import HeroSection from "../components/heroSection/HeroSection";
 import Offers from "../components/offers/Offers";
 import PromoBanner from "../components/PromoBanner/PromoBanner";
+import Selling from "../components/selling/Selling";
 import Slider from "../components/slider/Slider";
 
 const Home = () => {
@@ -15,6 +16,7 @@ const Home = () => {
         <Header />
         <HeroSection />
         <Arrivals />
+        <Selling />
         <DressStyle />
         <Slider />
       </main>
