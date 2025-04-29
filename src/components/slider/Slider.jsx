@@ -36,17 +36,17 @@ const Slider = () => {
         <h2 className="font-bold text-[32px] lg:text-[48px]">
           OUR HAPPY CUSTOMERS
         </h2>
-        <div className="flex gap-[16px]">
+        <div className="flex gap-[16px] w-[64px] object-contain shrink-0">
           <button onClick={scrollPrev} className="embla__prev">
             <img
-              className="w-[20px] h-[20px] rotate-180 cursor-pointer shrink-0"
+              className="w-[24px] h-[24px] object-contain rotate-180 cursor-pointer shrink-0"
               src="./images/svg/arrow.svg"
               alt="Prev Button"
             />
           </button>
           <button onClick={scrollNext} className="embla__next">
             <img
-              className="w-[20px] h-[20px] cursor-pointer shrink-0"
+              className="w-[24px] h-[24px] object-contain cursor-pointer shrink-0"
               src="./images/svg/arrow.svg"
               alt="Next Button"
             />
