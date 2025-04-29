@@ -1,5 +1,6 @@
 import { FaTwitter, FaFacebookF, FaInstagram, FaGithub } from "react-icons/fa";
 import { footerLists, paymentMethod } from "../../data/footerLists";
+import { Link } from "react-router-dom";
 
 const Footer = ({ children }) => {
   return (
@@ -9,11 +10,13 @@ const Footer = ({ children }) => {
         <div className="flex lg:flex-row flex-col gap-x-[113px]">
           <div>
             <div className="max-w-[248px]">
-              <img
-                src="./images/svg/Logo.svg"
-                alt="site Logo"
-                className="w-[114px] lg:w-[125px] h-[20px] lg:h-[20px] object-contain shrink-0"
-              />
+              <Link to="/">
+                <img
+                  src="./images/svg/Logo.svg"
+                  alt="site Logo"
+                  className="w-[114px] lg:w-[125px] h-[20px] lg:h-[20px] object-contain shrink-0"
+                />
+              </Link>
               <p className="mt-[14px] mb-[20px] text-[14px] text-[var(--colorBlackOpacity)] leading-[20px]">
                 We have clothes that suits your style and which you’re proud to
                 wear. From women to men.

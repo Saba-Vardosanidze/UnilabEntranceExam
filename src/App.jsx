@@ -1,10 +1,15 @@
 import Home from "./views/Home";
+import Product from "./views/Product";
+import { Routes, Route } from "react-router-dom";
 
 const App = () => {
   return (
-    <div>
-      <Home />
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/product" element={<Product />} />
+      </Routes>
+    </>
   );
 };
 

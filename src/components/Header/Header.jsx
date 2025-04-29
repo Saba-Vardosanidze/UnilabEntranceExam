@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
@@ -30,11 +31,13 @@ const Header = () => {
               alt="burgerMenu Button"
             />
           </button>
-          <img
-            src="./images/svg/Logo.svg"
-            alt="site Logo"
-            className="w-[126px] lg:w-[160px] h-[18px] lg:h-[22px] object-contain shrink-0"
-          />
+          <Link to="/">
+            <img
+              src="./images/svg/Logo.svg"
+              alt="site Logo"
+              className="w-[126px] lg:w-[160px] h-[18px] lg:h-[22px] object-contain shrink-0"
+            />
+          </Link>
         </div>
         <ul className="hidden lg:flex gap-[24px]">
           <li className="hover:text-[var(--paragraph-color)] transition duration-300 ease-in-out cursor-pointer">
