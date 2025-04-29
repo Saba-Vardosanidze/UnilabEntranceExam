@@ -4,6 +4,7 @@ import { useState } from "react";
 const Header = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [searchValue, setSearchValue] = useState("");
+  const [isBurgerOpen, setIsBurgerOpen] = useState(false);
 
   const inputCleaner = () => {
     setSearchValue("");
@@ -14,11 +15,15 @@ const Header = () => {
     setIsPagesOpen(false);
   };
 
+  const toggleBurgerMenu = () => {
+    setIsBurgerOpen((prev) => !prev);
+  };
+
   return (
     <header className="flex justify-center items-center w-full min-h-[64px] lg:min-h-[96px]">
       <div className="flex justify-between items-center lg:gap-[40px] px-[16px] lg:px-[100px] w-full lg:max-w-[1440px]">
         <div className="flex items-center gap-[16px] w-[166px] lg:w-[160px] h-[24px] lg:h-[22px] object-contain shrink-0">
-          <button className="lg:hidden">
+          <button className="lg:hidden" onClick={toggleBurgerMenu}>
             <img
               className="w-[24px] h-[24px] object-contain shrink-0"
               src="./images/svg/burgerMenu.svg"
@@ -90,7 +95,7 @@ const Header = () => {
             <a href="#">New Arrivals</a>
           </li>
           <li className="hover:text-[var(--paragraph-color)]">
-            <a href="#">Brands</a>
+            <a href="#">Brans</a>
           </li>
         </ul>
         <div className="relative w-full max-w-[577px]">
@@ -146,6 +151,84 @@ const Header = () => {
           </button>
         </div>
       </div>
+      {isBurgerOpen && (
+        <motion.div
+          initial={{ x: "-100%" }}
+          animate={{ x: 0 }}
+          exit={{ x: "-100%" }}
+          transition={{ duration: 0.3 }}
+          className="top-0 left-0 z-50 fixed flex flex-col gap-6 bg-white shadow-lg p-[24px] w-2/3 h-full"
+        >
+          <button onClick={toggleBurgerMenu} className="w-[24px] h-[24px]">
+            <img src="./images/svg/CloseBTN.svg" alt="close menu" />
+          </button>
+
+          <nav className="flex flex-col gap-4 mt-8">
+            <ul className="flex flex-col gap-[32px]">
+              <li className="font-medium text-[var(--paragraph-color)] hover:text-[var(--colorBlack)]">
+                <a href="#">Home</a>
+              </li>
+              <li className="font-medium text-[var(--paragraph-color)] hover:text-[var(--colorBlack)]">
+                <a href="#">About</a>
+              </li>
+              <li className="font-medium text-[var(--paragraph-color)] hover:text-[var(--colorBlack)]">
+                <a href="#">Services</a>
+              </li>
+              <li className="font-medium text-[var(--paragraph-color)] hover:text-[var(--colorBlack)]">
+                <div onClick={toggleServices} className="flex flex-col">
+                  <div className="flex gap-[7px]">
+                    <a to="#">Shop</a>
+                    <motion.img
+                      src="images/svg/Caret down.svg"
+                      alt="CaretDown"
+                      animate={isServicesOpen ? "open" : "closed"}
+                      variants={{
+                        open: {
+                          rotate: 180,
+                          filter: "brightness(1.2)",
+                        },
+                        closed: {
+                          rotate: 0,
+                          filter: "brightness(1)",
+                        },
+                      }}
+                      transition={{ duration: 0.3 }}
+                    />
+                  </div>
+                  {isServicesOpen && (
+                    <motion.ul
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="flex flex-col gap-[24px] mt-[24px] ml-[16px]"
+                    >
+                      <li className="font-medium text-[var(--paragraph-color)] hover:text-[var(--colorBlack)]">
+                        <a href="#">Privacy Policy</a>
+                      </li>
+                      <li className="font-medium text-[var(--paragraph-color)] hover:text-[var(--colorBlack)]">
+                        <a href="#">About Company</a>
+                      </li>
+                      <li className="font-medium text-[var(--paragraph-color)] hover:text-[var(--colorBlack)]">
+                        <a href="#">Payment Gateway</a>
+                      </li>
+                      <li className="font-medium text-[var(--paragraph-color)] hover:text-[var(--colorBlack)]">
+                        <a href="#">Terms & Conditions</a>
+                      </li>
+                    </motion.ul>
+                  )}
+                </div>
+              </li>
+              <li className="font-medium text-[var(--paragraph-color)] hover:text-[var(--colorBlack)]">
+                <a href="#">Testimonials</a>
+              </li>
+            </ul>
+          </nav>
+          <button className="bg-[var(--colorBlack)] mt-[62px] rounded-[10px] max-w-[165px] min-h-[52px] text-[var(--colorWhite)]">
+            Sign Up Now
+          </button>
+        </motion.div>
+      )}
     </header>
   );
 };
