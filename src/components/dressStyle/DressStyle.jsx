@@ -11,41 +11,52 @@ const DressStyle = () => {
           BROWSE BY DRESS STYLE
         </h2>
         <div className="flex flex-wrap justify-center gap-[16px] lg:gap-[20px]">
-          <div className="relative flex justify-end bg-[var(--colorWhite)] hover:bg-[var(--colorWhiteHover)] rounded-[20px] w-full max-w-[310px] lg:max-w-[407px] h-[190px] lg:min-h-[289px] overflow-hidden cursor-pointer">
+          <motion.div
+            className="relative flex justify-end bg-[var(--colorWhite)] hover:bg-[var(--colorWhiteHover)] rounded-[20px] w-full max-w-[310px] lg:max-w-[407px] h-[190px] lg:min-h-[289px] overflow-hidden cursor-pointer"
+            initial={{ opacity: 0, x: -100 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <img src="images/png/Adesigne.png" alt="designe" />
             <p className="top-[16px] left-[24px] absolute font-bold text-[24px]">
               Casual
             </p>
-          </div>
+          </motion.div>
           <motion.div
             className="relative flex justify-end bg-[var(--colorWhite)] hover:bg-[var(--colorWhiteHover)] rounded-[20px] max-w-[310px] lg:max-w-[684px] min-h-[190px] lg:min-h-[289px] overflow-hidden cursor-pointer"
             ref={ref}
             initial={{ opacity: 0, x: 100 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 1, ease: "easeOut" }}
           >
             <img src="images/png/Bdesigne.png" alt="designe" />
             <p className="top-[16px] left-[24px] absolute font-bold text-[24px]">
-              Casual
+              Formal
             </p>
           </motion.div>
           <motion.div
             className="relative flex justify-end bg-[var(--colorWhite)] hover:bg-[var(--colorWhiteHover)] rounded-[20px] w-full max-w-[310px] lg:max-w-[684px] min-h-[190px] lg:min-h-[289px] overflow-hidden cursor-pointer"
             initial={{ opacity: 0, x: -100 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 1, ease: "easeOut" }}
           >
             <img src="images/png/Cdesigne.png" alt="designe" />
             <p className="top-[16px] left-[24px] absolute font-bold text-[24px]">
-              Casual
+              Party
             </p>
           </motion.div>
-          <div className="relative flex justify-end bg-[var(--colorWhite)] hover:bg-[var(--colorWhiteHover)] rounded-[20px] w-full max-w-[310px] lg:max-w-[407px] h-[190px] lg:min-h-[289px] overflow-hidden cursor-pointer">
+          <motion.div
+            className="relative flex justify-end bg-[var(--colorWhite)] hover:bg-[var(--colorWhiteHover)] rounded-[20px] w-full max-w-[310px] lg:max-w-[407px] h-[190px] lg:min-h-[289px] overflow-hidden cursor-pointer"
+            ref={ref}
+            initial={{ opacity: 0, x: 100 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <img src="images/png/Ddesigne.png" alt="designe" />
             <p className="top-[16px] left-[24px] absolute font-bold text-[24px]">
-              Casual
+              Gym
             </p>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>
