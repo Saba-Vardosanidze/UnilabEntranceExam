@@ -2,6 +2,7 @@ import Footer from "../components/footer/Footer";
 import Header from "../components/Header/Header";
 import MightLike from "../components/MightLike/MightLike";
 import Offers from "../components/offers/Offers";
+import ProductDetail from "../components/productDetail/ProductDetail";
 import PromoBanner from "../components/PromoBanner/PromoBanner";
 import Reviews from "../components/reviews/Reviews";
 
@@ -12,6 +13,7 @@ const Product = () => {
         <PromoBanner />
         <Header />
         <Reviews />
+        <ProductDetail />
         <MightLike />
       </main>
       <Footer>
