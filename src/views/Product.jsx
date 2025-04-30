@@ -2,6 +2,7 @@ import Footer from "../components/footer/Footer";
 import Header from "../components/Header/Header";
 import MightLike from "../components/MightLike/MightLike";
 import Offers from "../components/offers/Offers";
+import ProductDetail from "../components/productDetail/ProductDetail";
 import PromoBanner from "../components/PromoBanner/PromoBanner";
 
 const Product = () => {
@@ -10,6 +11,7 @@ const Product = () => {
       <main className="flex-1">
         <PromoBanner />
         <Header />
+        <ProductDetail />
         <MightLike />
       </main>
       <Footer>
