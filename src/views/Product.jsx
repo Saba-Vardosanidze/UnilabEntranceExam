@@ -12,8 +12,8 @@ const Product = () => {
       <main className="flex-1">
         <PromoBanner />
         <Header />
-        <Reviews />
         <ProductDetail />
+        <Reviews />
         <MightLike />
       </main>
       <Footer>
