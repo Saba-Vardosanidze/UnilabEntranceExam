@@ -23,7 +23,7 @@ const Arrivals = () => {
   if (error) return <p>Error: {error.message}</p>;
 
   return (
-    <div className="flex flex-col items-center">
+    <div id="arrival" className="flex flex-col items-center">
       <div className="flex flex-col items-center lg:px-[100px] pl-[16px] w-full max-w-[1440px]">
         <h2 className="mt-[50px] lg:mt-[72px] mb-[32px] font-bold text-[32px] lg:text-[48px]">
           NEW ARRIVALS
