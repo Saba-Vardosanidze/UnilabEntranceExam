@@ -1,15 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import useEmblaCarousel from "embla-carousel-react";
 import { Link } from "react-router-dom";
-
-const fetchCards = async () => {
-  const response = await fetch(
-    "https://6807cb21942707d722dc723c.mockapi.io/t-shirts"
-  );
-  if (!response.ok) throw new Error("error fetching data");
-
-  return response.json();
-};
+import { fetchCards } from "../../api/api";
 
 const Arrivals = () => {
   const [emblaRef] = useEmblaCarousel({ loop: false });
