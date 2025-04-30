@@ -4,6 +4,7 @@ import MightLike from "../components/MightLike/MightLike";
 import Offers from "../components/offers/Offers";
 import ProductDetail from "../components/productDetail/ProductDetail";
 import PromoBanner from "../components/PromoBanner/PromoBanner";
+import Reviews from "../components/reviews/Reviews";
 
 const Product = () => {
   return (
@@ -11,6 +12,7 @@ const Product = () => {
       <main className="flex-1">
         <PromoBanner />
         <Header />
+        <Reviews />
         <ProductDetail />
         <MightLike />
       </main>

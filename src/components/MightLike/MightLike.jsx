@@ -1,20 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
 import useEmblaCarousel from "embla-carousel-react";
-
-const fetchCards = async () => {
-  const response = await fetch(
-    "https://6807cb21942707d722dc723c.mockapi.io/t-shirts"
-  );
-  if (!response.ok) throw new Error("error fetching data");
-
-  return response.json();
-};
+import { fetchCards } from "../../api/api";
 
 const MightLike = () => {
   const [emblaRef] = useEmblaCarousel({ loop: false });
 
   const { data, isLoading, error } = useQuery({
-    queryKey: ["posts"],
+    queryKey: ["cards"],
     queryFn: fetchCards,
   });
 
@@ -58,7 +50,7 @@ const MightLike = () => {
                         </span>
                       </p>
                     </div>
-                    <div className="flex items-center gap-x-[5px]">
+                    <div className="flex items-center gap-x-[5px] lg:gap-x-[10px]">
                       <p className="font-bold text-[20px] lg:text-[24px]">
                         {eachElement.price}
                       </p>

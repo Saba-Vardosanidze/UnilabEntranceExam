@@ -4,7 +4,10 @@ import { Link } from "react-router-dom";
 
 const Footer = ({ children }) => {
   return (
-    <footer className="relative bg-[var(--grayColorForInput)] mt-[184px] px-[16px] pt-[189px] lg:pt-[140px] pb-[77px] w-full">
+    <footer
+      id="footer"
+      className="relative bg-[var(--grayColorForInput)] mt-[184px] px-[16px] pt-[189px] lg:pt-[140px] pb-[77px] w-full"
+    >
       {children}
       <div className="m-auto lg:px-[100px] w-full lg:max-w-[1440px]">
         <div className="flex lg:flex-row flex-col gap-x-[113px]">

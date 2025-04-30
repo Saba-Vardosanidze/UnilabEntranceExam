@@ -73,16 +73,16 @@ const Header = () => {
                 >
                   <ul className="flex flex-col lg:gap-[32px]">
                     <li className="text-[var(--paragraph-color)] hover:text-[var(--colorBlack)] transition duration-300 ease-in-out cursor-pointer">
-                      <a to="#">Privacy Policy</a>
+                      <a href="#footer">Privacy Policy</a>
                     </li>
                     <li className="text-[var(--paragraph-color)] hover:text-[var(--colorBlack)] transition duration-300 ease-in-out cursor-pointer">
-                      <a to="#">Payment Gateway</a>
+                      <a href="#footer">Payment Gateway</a>
                     </li>
                     <li className="text-[var(--paragraph-color)] hover:text-[var(--colorBlack)] transition duration-300 ease-in-out cursor-pointer">
-                      <a to="#">Payment Gateway</a>
+                      <a href="#footer">Payment Gateway</a>
                     </li>
                     <li className="text-[var(--paragraph-color)] hover:text-[var(--colorBlack)] transition duration-300 ease-in-out cursor-pointer">
-                      <a href="#">Terms & Conditions</a>
+                      <a href="#footer">Terms & Conditions</a>
                     </li>
                   </ul>
                 </motion.div>
@@ -92,13 +92,13 @@ const Header = () => {
             </div>
           </li>
           <li className="hover:text-[var(--paragraph-color)]">
-            <a href="#">On Sale</a>
+            <a href="#sale">On Sale</a>
           </li>
           <li className="hover:text-[var(--paragraph-color)]">
-            <a href="#">New Arrivals</a>
+            <a href="#arrival">New Arrivals</a>
           </li>
           <li className="hover:text-[var(--paragraph-color)]">
-            <a href="#">Brans</a>
+            <a href="#brand">Brans</a>
           </li>
         </ul>
         <div className="relative w-full max-w-[577px]">
