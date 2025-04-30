@@ -19,7 +19,7 @@ const ProductDetail = () => {
   }
   return (
     <div className="m-auto px-[16px] lg:px-[100px] w-full max-w-[1440px]">
-      {/* <div className="bg-[var(--colorBlackborder)] mb-[24px] w-full h-[1px]"></div> */}
+      <div className="bg-[var(--colorBlackborder)] mb-[24px] w-full h-[1px]"></div>
       <div className="flex gap-[6px] my-[22px]">
         <div className="flex">
           <Link to="/">
