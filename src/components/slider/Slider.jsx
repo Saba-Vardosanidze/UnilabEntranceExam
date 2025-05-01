@@ -1,14 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
 import useEmblaCarousel from "embla-carousel-react";
 import React, { useCallback } from "react";
-import { fetchCards } from "../../api/api";
-
+import { fetchComent } from "../../api/api";
 const Slider = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
 
   const { data, isLoading, error } = useQuery({
-    queryKey: ["posts"],
-    queryFn: fetchCards,
+    queryKey: ["coments"],
+    queryFn: fetchComent,
   });
 
   const scrollPrev = useCallback(() => {
@@ -48,38 +47,34 @@ const Slider = () => {
 
       <div className="overflow-hidden embla" ref={emblaRef}>
         <div className="flex embla__container">
-          {data
-            .filter(
-              (eachElement) => eachElement.id >= 9 && eachElement.id <= 13
-            )
-            .map((eachElement) => (
-              <div
-                key={eachElement.id}
-                className="flex-[0_0_auto] mr-[16px] lg:mr-[20px] px-[24px] lg:px-[32px] py-[24px] lg:py-[28px] border border-[var(--colorBlackborder)] rounded-[20px] w-[358px] lg:w-[400px] min-h-[186px] lg:min-h-[240px] embla__slide"
-              >
+          {data.map((eachElement) => (
+            <div
+              key={eachElement.id}
+              className="flex-[0_0_auto] mr-[16px] lg:mr-[20px] px-[24px] lg:px-[32px] py-[24px] lg:py-[28px] border border-[var(--colorBlackborder)] rounded-[20px] w-[358px] lg:w-[400px] min-h-[186px] lg:min-h-[240px] embla__slide"
+            >
+              <div>
+                <img
+                  className="w-full max-w-[118px] lg:max-w-[138px]"
+                  src={eachElement.rate}
+                  alt="Customer rate"
+                />
                 <div>
-                  <img
-                    className="w-full max-w-[118px] lg:max-w-[138px]"
-                    src={eachElement.rate}
-                    alt="Customer rate"
-                  />
-                  <div>
-                    <div className="flex items-center gap-[4px] mt-[12px] lg:mt-[15px] mb-[8px] lg:mb-[12px]">
-                      <p className="font-bold text-[20px]">
-                        {eachElement.userName}
-                      </p>
-                      <img
-                        src={eachElement.verification}
-                        alt="Verification badge"
-                      />
-                    </div>
-                    <p className="text-[14px] text-[var(--colorBlackOpacity)] lg:text-[16px]">
-                      {eachElement.description}
+                  <div className="flex items-center gap-[4px] mt-[12px] lg:mt-[15px] mb-[8px] lg:mb-[12px]">
+                    <p className="font-bold text-[20px]">
+                      {eachElement.userName}
                     </p>
+                    <img
+                      src="./images/svg/verification.svg"
+                      alt="Verification badge"
+                    />
                   </div>
+                  <p className="text-[14px] text-[var(--colorBlackOpacity)] lg:text-[16px]">
+                    {eachElement.description}
+                  </p>
                 </div>
               </div>
-            ))}
+            </div>
+          ))}
         </div>
       </div>
     </div>
