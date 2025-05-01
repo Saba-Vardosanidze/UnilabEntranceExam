@@ -42,11 +42,28 @@ const ProductDetail = () => {
       </div>
       <div className="lg:flex items-center gap-[40px]">
         <div className="lg:flex lg:flex-row-reverse items-center gap-[14px] w-full max-w-[610px]">
-          <div className="bg-[var(--productContainerColor)] rounded-[20px] w-full max-w-[358px] lg:max-w-[444px] min-h-[290px] lg:min-h-[530px]"></div>
+          <div className="bg-[var(--productContainerColor)] rounded-[20px] w-full max-w-[358px] lg:max-w-[444px] min-h-[290px] lg:min-h-[530px]">
+            <img src="./images/png/t-shirtExampleD.png" alt="exampleT-shirt" />
+          </div>
           <div className="flex lg:flex-col gap-[12px] lg:gap-[14px] mt-[12px] lg:mt-[0px] w-full lg:max-w-[152px]">
-            <div className="bg-[var(--productContainerColor)] hover:border rounded-[20px] w-full max-w-[111px] lg:max-w-[152px] min-h-[106px] lg:min-h-[167px] cursor-pointer"></div>
-            <div className="bg-[var(--productContainerColor)] hover:border rounded-[20px] w-full max-w-[111px] lg:max-w-[152px] min-h-[106px] lg:min-h-[167px] cursor-pointer"></div>
-            <div className="bg-[var(--productContainerColor)] hover:border rounded-[20px] w-full max-w-[111px] lg:max-w-[152px] min-h-[106px] lg:min-h-[167px] cursor-pointer"></div>
+            <div className="bg-[var(--productContainerColor)] hover:border rounded-[20px] w-full max-w-[111px] lg:max-w-[152px] min-h-[106px] lg:min-h-[167px] cursor-pointer">
+              <img
+                src="./images/png/t-shirtExampleC.png"
+                alt="exampleT-shirt"
+              />
+            </div>
+            <div className="bg-[var(--productContainerColor)] hover:border rounded-[20px] w-full max-w-[111px] lg:max-w-[152px] min-h-[106px] lg:min-h-[167px] cursor-pointer">
+              <img
+                src="./images/png/t-shirtExampleB.png"
+                alt="exampleT-shirt"
+              />
+            </div>
+            <div className="bg-[var(--productContainerColor)] hover:border rounded-[20px] w-full max-w-[111px] lg:max-w-[152px] min-h-[106px] lg:min-h-[167px] cursor-pointer">
+              <img
+                src="./images/png/t-shirtExampleA.png"
+                alt="exampleT-shirt"
+              />
+            </div>
           </div>
         </div>
         <div>
@@ -72,13 +89,6 @@ const ProductDetail = () => {
               <p className="font-bold text-[24px] text-[var(--oldPrice)] lg:text-[32px] line-through">
                 $300
               </p>
-              {/* {eachElement.discount ? (
-              <div className="flex justify-center items-center bg-[var(--dicoundColor)] rounded-[62px] w-[62px] lg:w-[58px] h-[31px] lg:h-[28px] text-[var(--discountTextColor)]">
-                <p className="font-medium text-[14px] lg:text-[12px]">-40%</p>
-              </div>
-            ) : (
-              ""
-            )} */}
             </div>
             <p className="mt-[20px] text-[14px] text-[var(--colorBlackOpacity)] lg:text-[16px]">
               This graphic t-shirt which is perfect for any occasion. Crafted

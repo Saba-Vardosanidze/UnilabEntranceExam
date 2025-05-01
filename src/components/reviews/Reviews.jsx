@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { fetchComent } from "../../api/api";
 import { useQuery } from "@tanstack/react-query";
+import { Link } from "react-router-dom";
 
 const Reviews = () => {
   const { data, isLoading, error } = useQuery({
@@ -81,9 +82,14 @@ const Reviews = () => {
             <p className="font-medium">Latest</p>
             <img src="./images/svg/downArow.svg" alt="downArowButton" />
           </div>
-          <button className="bg-[var(--colorBlack)] rounded-[62px] w-full max-w-[113px] lg:max-w-[166px] min-h-[40px] lg:min-h-[48px] text-[12px] text-[var(--colorWhite)] lg:text-[16px] cursor-pointer">
-            Write a Review
-          </button>
+          <Link
+            to="/createreview"
+            className="w-full max-w-[113px] lg:max-w-[166px] min-h-[40px] lg:min-h-[48px]"
+          >
+            <button className="bg-[var(--colorBlack)] rounded-[62px] w-full max-w-[113px] lg:max-w-[166px] min-h-[40px] lg:min-h-[48px] text-[12px] text-[var(--colorWhite)] lg:text-[16px] cursor-pointer">
+              Write a Review
+            </button>
+          </Link>
         </div>
       </div>
       <div>
@@ -109,13 +115,13 @@ const Reviews = () => {
                 <p className="font-bold lg:text-[20px]">
                   {eachElements.userName}
                 </p>
-                <img src={eachElements.verification} alt="verification" />
+                <img src="./images/svg/verification.svg" alt="verification" />
               </div>
               <p className="mt-[8px] lg:mt-[12px] min-h-[120px] lg:min-h-[66px] text-[14px] text-[var(--colorBlackOpacity)] lg:text-[16px]">
                 {eachElements.description}
               </p>
               <p className="mt-[16px] lg:mt-[24px] font-medium text-[14px] text-[var(--colorBlackOpacity)] lg:text-[16px]">
-                {eachElements.data}
+                {eachElements.createdAt}
               </p>
             </div>
           ))}
