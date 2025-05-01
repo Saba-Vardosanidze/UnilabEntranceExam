@@ -69,7 +69,10 @@ const AllProduct = () => {
           <div className="bg-[var(--colorBlackborder)] mb-[20px] w-full h-[1px]"></div>
         </div>
         <div className="flex justify-between items-center w-full max-w-[920px]">
-          <button className="flex items-center gap-[8px] px-[10px] py-[8px] border border-[var(--colorBlackborder)] rounded-[8px] text-[12px] cursor-pointer">
+          <button
+            onClick={() => setCurrentPage(1)}
+            className="flex items-center gap-[8px] px-[10px] lg:px-[14px] py-[8px] lg:py-[8px] border border-[var(--colorBlackborder)] rounded-[8px] text-[12px] cursor-pointer"
+          >
             <img
               src="./images/svg/arrow.svg"
               className="h-[16px] rotate-180"
@@ -78,20 +81,31 @@ const AllProduct = () => {
             Previous
           </button>
           <div className="flex gap-[2px]">
-            <div
+            <button
               onClick={() => setCurrentPage(1)}
-              className="bg-[var(--pageNumerationColor)] lg:px-[17px] lg:py-[10px] rounded-[8px] cursor-pointer"
+              className={`${
+                currentPage === 1
+                  ? " bg-[var(--pageNumerationColor)] text-[var(--colorBlack)]"
+                  : "text-[var(--paragraph-color)]"
+              } rounded-[8px]  cursor-pointer lg:px-[17px] lg:py-[10px]`}
             >
               1
-            </div>
-            <div
+            </button>
+            <button
               onClick={() => setCurrentPage(2)}
-              className="lg:px-[17px] lg:py-[10px] text-[var(--paragraph-color)] cursor-pointer"
+              className={`${
+                currentPage === 2
+                  ? " bg-[var(--pageNumerationColor)] text-[var(--colorBlack)]"
+                  : "text-[var(--paragraph-color)]"
+              } rounded-[8px]  cursor-pointer lg:px-[17px] lg:py-[10px]`}
             >
               2
-            </div>
+            </button>
           </div>
-          <button className="flex items-center gap-[8px] px-[10px] py-[8px] border border-[var(--colorBlackborder)] rounded-[8px] text-[12px] cursor-pointer">
+          <button
+            onClick={() => setCurrentPage(2)}
+            className="flex items-center gap-[8px] px-[10px] lg:px-[14px] py-[8px] lg:py-[8px] border border-[var(--colorBlackborder)] rounded-[8px] text-[12px] cursor-pointer"
+          >
             Next
             <img
               src="./images/svg/arrow.svg"
