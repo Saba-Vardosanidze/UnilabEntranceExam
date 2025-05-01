@@ -1,3 +1,4 @@
+import Category from "./views/Category";
 import CreateReview from "./views/CreateReview";
 import Home from "./views/Home";
 import Product from "./views/Product";
@@ -13,6 +14,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/product" element={<Product />} />
         <Route path="/createreview" element={<CreateReview />} />
+        <Route path="/category" element={<Category />} />
       </Routes>
     </>
   );

@@ -26,7 +26,7 @@ const MightLike = () => {
           <div className="flex gap-x-[16px] embla__container">
             {data
               .filter(
-                (eachElement) => eachElement.id >= 14 && eachElement.id <= 17
+                (eachElement) => eachElement.id >= 9 && eachElement.id <= 12
               )
               .map((eachElement) => (
                 <div key={eachElement.id} className="embla__slide">
