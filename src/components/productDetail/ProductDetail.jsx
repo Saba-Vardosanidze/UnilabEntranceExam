@@ -125,27 +125,29 @@ const ProductDetail = () => {
               Choose Size
             </p>
             <div className="flex gap-[8px] mt-[16px]">
-              {chooseSize.map((eachElement) => (
-                <div
-                  key={eachElement.id}
-                  className={`px-[20px] py-[10px] rounded-[62px] cursor-pointer ${
-                    selectedSize === eachElement.id
-                      ? "bg-[var(--colorBlack)]"
-                      : "bg-[var(--grayColorForInput)]"
-                  }`}
-                  onClick={() => setSelectedSize(eachElement.id)}
-                >
-                  <p
-                    className={`text-[14px] ${
+              {chooseSize
+                .filter((eachElement) => eachElement.id <= 4)
+                .map((eachElement) => (
+                  <div
+                    key={eachElement.id}
+                    className={`px-[20px] py-[10px] rounded-[62px] cursor-pointer ${
                       selectedSize === eachElement.id
-                        ? "text-[var(--colorWhite)]"
-                        : "text-[var(--colorBlackOpacity)]"
+                        ? "bg-[var(--colorBlack)]"
+                        : "bg-[var(--grayColorForInput)]"
                     }`}
+                    onClick={() => setSelectedSize(eachElement.id)}
                   >
-                    {eachElement.size}
-                  </p>
-                </div>
-              ))}
+                    <p
+                      className={`text-[14px] ${
+                        selectedSize === eachElement.id
+                          ? "text-[var(--colorWhite)]"
+                          : "text-[var(--colorBlackOpacity)]"
+                      }`}
+                    >
+                      {eachElement.size}
+                    </p>
+                  </div>
+                ))}
             </div>
           </div>
           <div className="bg-[var(--colorBlackborder)] mt-[24px] mb-[24px] w-full h-[1px]"></div>
