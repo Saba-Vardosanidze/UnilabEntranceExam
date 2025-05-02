@@ -1,36 +1,42 @@
-import { useState } from "react";
-import { choseColor, chooseSize } from "../../data/choseColor";
-import { Link } from "react-router-dom";
-import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { fetchCards } from "../../api/api";
+import { choseColor, chooseSize } from "../../data/choseColor";
+
 const ProductDetail = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
+
   const { data, isLoading, isError } = useQuery({
-    queryKey: ["cards"],
+    queryKey: ["product", id],
     queryFn: fetchCards,
   });
-  if (isLoading) return <p>Loading ...</p>;
-  if (isError) return <p>Error</p>;
 
   const [selectedColor, setSelectedColor] = useState(null);
   const [selectedSize, setSelectedSize] = useState(null);
   const [addItem, setAddItem] = useState(0);
 
-  const card = data.find((eachElement) => eachElement.id === Number(id));
+  const card = data?.find((eachElement) => eachElement.id === Number(id));
 
-  if (!card) return <p>Product not found</p>;
+  useEffect(() => {
+    if (!isLoading && !isError && data && !card) {
+      navigate("/not-found", { replace: true });
+    }
+  }, [card, data, isLoading, isError, navigate]);
+
+  if (isLoading) return <p>Loading ...</p>;
+  if (isError) return <p>Error</p>;
+  if (!card) return null;
 
   const pluseItem = () => {
     setAddItem(addItem + 1);
   };
 
   const minus = () => {
-    setAddItem(addItem - 1);
+    setAddItem((prev) => Math.max(0, prev - 1));
   };
-  if (addItem < 0) {
-    setAddItem(0);
-  }
+
   return (
     <div className="m-auto px-[16px] lg:px-[100px] w-full max-w-[1440px]">
       <div className="bg-[var(--colorBlackborder)] mb-[24px] w-full h-[1px]"></div>
