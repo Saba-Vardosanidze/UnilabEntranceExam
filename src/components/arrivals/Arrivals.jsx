@@ -29,7 +29,7 @@ const Arrivals = () => {
               .filter((eachElement) => eachElement.id <= 4)
               .map((eachElement) => (
                 <div key={eachElement.id} className="embla__slide">
-                  <Link to="/product">
+                  <Link to={`/product/${eachElement.id}`}>
                     <div className="flex justify-center items-center bg-[var(--productContainerColor)] hover:bg-[var(--productContainerColorHover)] rounded-[14px] w-[198px] lg:w-[295px] h-[200px] lg:min-h-[298px] transition-all duration-300 ease-in-out cursor-pointer">
                       <img src={eachElement.image} alt={eachElement.name} />
                     </div>

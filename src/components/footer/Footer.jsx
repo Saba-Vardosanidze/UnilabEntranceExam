@@ -15,7 +15,7 @@ const Footer = ({ children }) => {
             <div className="max-w-[248px]">
               <Link to="/">
                 <img
-                  src="./images/svg/Logo.svg"
+                  src="/images/svg/Logo.svg"
                   alt="site Logo"
                   className="w-[114px] lg:w-[125px] h-[20px] lg:h-[20px] object-contain shrink-0"
                 />

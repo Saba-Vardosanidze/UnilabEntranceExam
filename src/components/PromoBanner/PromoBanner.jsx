@@ -22,7 +22,7 @@ const PromoBanner = () => {
           onClick={() => setPromoteOff(false)}
           className="hidden lg:flex cursor-pointer"
         >
-          <img src="./images/svg/whiteXicon.svg" alt="Off button" />
+          <img src="/images/svg/whiteXicon.svg" alt="Off button" />
         </button>
       </div>
     </div>

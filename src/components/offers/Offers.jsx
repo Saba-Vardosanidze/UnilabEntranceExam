@@ -14,7 +14,7 @@ const Offers = () => {
             />
             <img
               className="top-1/2 left-[16px] absolute -translate-y-1/2 transform"
-              src="images/svg/convert.svg"
+              src="/images/svg/convert.svg"
               alt="convertPhoto"
             />
           </div>

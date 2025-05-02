@@ -39,22 +39,22 @@ export const footerLists = [
 export const paymentMethod = [
   {
     cardRegister: "#",
-    paymentCard: "images/svg/visa.svg",
+    paymentCard: "/images/svg/visa.svg",
   },
   {
     cardRegister: "#",
-    paymentCard: "images/svg/Badge.svg",
+    paymentCard: "/images/svg/Badge.svg",
   },
   {
     cardRegister: "#",
-    paymentCard: "images/svg/payPal.svg",
+    paymentCard: "/images/svg/payPal.svg",
   },
   {
     cardRegister: "#",
-    paymentCard: "images/svg/ApplePay.svg",
+    paymentCard: "/images/svg/ApplePay.svg",
   },
   {
     cardRegister: "#",
-    paymentCard: "images/svg/GooglePay.svg",
+    paymentCard: "/images/svg/GooglePay.svg",
   },
 ];

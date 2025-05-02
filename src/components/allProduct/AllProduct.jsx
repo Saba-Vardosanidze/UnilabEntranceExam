@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { fetchCards } from "../../api/api";
 import { useState } from "react";
 import Filter from "../filter/Filter";
+import { Link } from "react-router-dom";
 
 const AllProduct = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -50,9 +51,11 @@ const AllProduct = () => {
               key={eachElement.id}
               className="max-w-[172px] lg:max-w-[295px]"
             >
-              <div className="flex justify-center items-center bg-[var(--productContainerColor)] hover:bg-[var(--productContainerColorHover)] rounded-[14px] w-[172px] lg:w-[295px] h-[174px] lg:min-h-[298px] transition-all duration-300 ease-in-out cursor-pointer">
-                <img src={eachElement.image} alt={eachElement.name} />
-              </div>
+              <Link to={`/product/${eachElement.id}`}>
+                <div className="flex justify-center items-center bg-[var(--productContainerColor)] hover:bg-[var(--productContainerColorHover)] rounded-[14px] w-[172px] lg:w-[295px] h-[174px] lg:min-h-[298px] transition-all duration-300 ease-in-out cursor-pointer">
+                  <img src={eachElement.image} alt={eachElement.name} />
+                </div>
+              </Link>
               <div>
                 <p className="mt-[10px] lg:mt-[16px] font-bold lg:text-[20px]">
                   {eachElement.name}

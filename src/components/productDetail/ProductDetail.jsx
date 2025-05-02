@@ -1,11 +1,25 @@
 import { useState } from "react";
-import { choseColor } from "../../data/choseColor";
-import { chooseSize } from "../../data/choseColor";
+import { choseColor, chooseSize } from "../../data/choseColor";
 import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
+import { fetchCards } from "../../api/api";
 const ProductDetail = () => {
+  const { id } = useParams();
+  const { data, isLoading, isError } = useQuery({
+    queryKey: ["cards"],
+    queryFn: fetchCards,
+  });
+  if (isLoading) return <p>Loading ...</p>;
+  if (isError) return <p>Error</p>;
+
   const [selectedColor, setSelectedColor] = useState(null);
   const [selectedSize, setSelectedSize] = useState(null);
   const [addItem, setAddItem] = useState(0);
+
+  const card = data.find((eachElement) => eachElement.id === Number(id));
+
+  if (!card) return <p>Product not found</p>;
 
   const pluseItem = () => {
     setAddItem(addItem + 1);
@@ -25,69 +39,64 @@ const ProductDetail = () => {
           <Link to="/">
             <p className="text-[14px] text-[var(--colorBlackOpacity)]">Home</p>
           </Link>
-          <img src="images/svg/rightArrow.svg" alt="arrow" />
+          <img src="/images/svg/rightArrow.svg" alt="arrow" />
         </div>
         <div className="flex">
           <p className="text-[14px] text-[var(--colorBlackOpacity)]">Shop</p>
-          <img src="images/svg/rightArrow.svg" alt="arrow" />
+          <img src="/images/svg/rightArrow.svg" alt="arrow" />
         </div>
         <div className="flex">
           <p className="text-[14px] text-[var(--colorBlackOpacity)]">Men</p>
-          <img src="images/svg/rightArrow.svg" alt="arrow" />
+          <img src="/images/svg/rightArrow.svg" alt="arrow" />
         </div>
         <div className="flex">
           <p className="text-[14px] text-[var(--colorBlack)]">T-shirts</p>
-          <img src="images/svg/rightArrow.svg" alt="arrow" />
+          <img src="/images/svg/rightArrow.svg" alt="arrow" />
         </div>
       </div>
       <div className="lg:flex items-center gap-[40px]">
         <div className="lg:flex lg:flex-row-reverse items-center gap-[14px] w-full max-w-[610px]">
-          <div className="bg-[var(--productContainerColor)] rounded-[20px] w-full max-w-[358px] lg:max-w-[444px] min-h-[290px] lg:min-h-[530px]">
-            <img src="./images/png/t-shirtExampleD.png" alt="exampleT-shirt" />
+          <div className="flex justify-center items-center bg-[var(--productContainerColor)] rounded-[20px] w-full max-w-[358px] lg:max-w-[444px] min-h-[290px] lg:min-h-[530px]">
+            <img
+              className="min-h-[290px] lg:min-h-[430px]"
+              src={card.image}
+              alt="exampleT-shirt"
+            />
           </div>
           <div className="flex lg:flex-col gap-[12px] lg:gap-[14px] mt-[12px] lg:mt-[0px] w-full lg:max-w-[152px]">
             <div className="bg-[var(--productContainerColor)] hover:border rounded-[20px] w-full max-w-[111px] lg:max-w-[152px] min-h-[106px] lg:min-h-[167px] cursor-pointer">
-              <img
-                src="./images/png/t-shirtExampleC.png"
-                alt="exampleT-shirt"
-              />
+              <img src="/images/png/t-shirtExampleC.png" alt="exampleT-shirt" />
             </div>
             <div className="bg-[var(--productContainerColor)] hover:border rounded-[20px] w-full max-w-[111px] lg:max-w-[152px] min-h-[106px] lg:min-h-[167px] cursor-pointer">
-              <img
-                src="./images/png/t-shirtExampleB.png"
-                alt="exampleT-shirt"
-              />
+              <img src="/images/png/t-shirtExampleB.png" alt="exampleT-shirt" />
             </div>
             <div className="bg-[var(--productContainerColor)] hover:border rounded-[20px] w-full max-w-[111px] lg:max-w-[152px] min-h-[106px] lg:min-h-[167px] cursor-pointer">
-              <img
-                src="./images/png/t-shirtExampleA.png"
-                alt="exampleT-shirt"
-              />
+              <img src="/images/png/t-shirtExampleA.png" alt="exampleT-shirt" />
             </div>
           </div>
         </div>
         <div>
           <div className="mt-[20px] lg:mt-[0px]">
-            <p className="font-bold text-[24px] lg:text-[40px]">
-              One Life Graphic T-shirt
-            </p>
+            <p className="font-bold text-[24px] lg:text-[40px]">{card.name}</p>
             <div className="flex items-center gap-x-[11px] lg:gap-x-[16px] mt-[12px] lg:mt-[14px]">
               <img
                 className="h-[16px] lg:h-[24px] lg:min-h-[18px]"
-                src="./images/png/Frame 10.png"
+                src={card.rateImg}
                 alt="rate"
               />
               <p className="font-normal text-[14px] lg:text-[16px]">
-                4.5
+                {card.rating}
                 <span className="font-normal text-[14px] text-[var(--colorBlackOpacity)] lg:text-[16px]">
                   /5
                 </span>
               </p>
             </div>
             <div className="flex items-center gap-x-[10px] mt-[12px] lg:mt-[14px]">
-              <p className="font-bold text-[24px] lg:text-[32px]">$260</p>
+              <p className="font-bold text-[24px] lg:text-[32px]">
+                {card.price}
+              </p>
               <p className="font-bold text-[24px] text-[var(--oldPrice)] lg:text-[32px] line-through">
-                $300
+                {card.oldPrice}
               </p>
             </div>
             <p className="mt-[20px] text-[14px] text-[var(--colorBlackOpacity)] lg:text-[16px]">
@@ -110,7 +119,7 @@ const ProductDetail = () => {
                 >
                   {selectedColor === eachElement.id && (
                     <img
-                      src="./images/svg/choseColormark.svg"
+                      src="/images/svg/choseColormark.svg"
                       alt="selected"
                       className="top-1/2 left-1/2 absolute -translate-x-1/2 -translate-y-1/2"
                     />
@@ -157,7 +166,7 @@ const ProductDetail = () => {
                 onClick={minus}
                 className="w-[20px] lg:w-[24px] h-[20px] lg:h-[24px] cursor-pointer"
               >
-                <img src="./images/svg/minus.svg" alt="removeCardButton" />
+                <img src="/images/svg/minus.svg" alt="removeCardButton" />
               </button>
               <p className="font-medium text-[14px] lg:text-[16px]">
                 {addItem}
@@ -166,7 +175,7 @@ const ProductDetail = () => {
                 onClick={pluseItem}
                 className="w-[20px] lg:w-[24px] h-[20px] lg:h-[24px] cursor-pointer"
               >
-                <img src="./images/svg/pluse.svg" alt="addCardButton" />
+                <img src="/images/svg/pluse.svg" alt="addCardButton" />
               </button>
             </div>
             <button className="bg-[var(--colorBlack)] rounded-[62px] w-full max-w-[236px] lg:max-w-[400px] min-h-[44px] lg:min-h-[52px] text-[14px] text-[var(--colorWhite)] lg:text-[16px] cursor-pointer">

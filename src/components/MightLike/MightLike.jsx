@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import useEmblaCarousel from "embla-carousel-react";
 import { fetchCards } from "../../api/api";
+import { Link } from "react-router-dom";
 
 const MightLike = () => {
   const [emblaRef] = useEmblaCarousel({ loop: false });
@@ -30,9 +31,11 @@ const MightLike = () => {
               )
               .map((eachElement) => (
                 <div key={eachElement.id} className="embla__slide">
-                  <div className="flex justify-center items-center bg-[var(--productContainerColor)] hover:bg-[var(--productContainerColorHover)] rounded-[14px] w-[198px] lg:w-[295px] h-[200px] lg:min-h-[298px] transition-all duration-300 ease-in-out cursor-pointer">
-                    <img src={eachElement.image} alt={eachElement.name} />
-                  </div>
+                  <Link to={`/product/${eachElement.id}`}>
+                    <div className="flex justify-center items-center bg-[var(--productContainerColor)] hover:bg-[var(--productContainerColorHover)] rounded-[14px] w-[198px] lg:w-[295px] h-[200px] lg:min-h-[298px] transition-all duration-300 ease-in-out cursor-pointer">
+                      <img src={eachElement.image} alt={eachElement.name} />
+                    </div>
+                  </Link>
                   <div>
                     <p className="mt-[10px] lg:mt-[16px] font-bold lg:text-[20px]">
                       {eachElement.name}
