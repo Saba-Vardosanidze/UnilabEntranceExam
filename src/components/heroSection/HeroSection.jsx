@@ -4,7 +4,7 @@ const HeroSection = () => {
       <div className="flex lg:flex-row flex-col justify-between px-[16px] lg:px-[100px] w-full max-w-[1440px]">
         <div className="flex justify-center mt-[40px] lg:mt-[0px]">
           <div className="flex flex-col lg:justify-center">
-            <h2 className="max-w-[315px] lg:max-w-[577px] text-[var(--font-integralcf)] font-bold text-[36px] lg:text-[64px] leading-[34px] lg:leading-[64px]">
+            <h2 className="max-w-[315px] lg:max-w-[577px] font-noto text-[var(--font-integralcf)] font-bold text-[36px] lg:text-[64px] leading-[34px] lg:leading-[64px]">
               FIND CLOTHES THAT MATCHES YOUR STYLE
             </h2>
             <p className="mt-[20px] lg:mt-[32px] mb-[24px] lg:mb-[32px] max-w-[358px] lg:max-w-[545px] font-[var(--font-satoshi)] text-[14px] text-[var(--colorBlackOpacity)] lg:text-[14px]">

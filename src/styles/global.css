@@ -22,16 +22,25 @@
   --pageNumerationColor: #00000006;
 
   /* fonts */
-  --font-integralcf: "integralcf", Arial;
-  --font-satoshi: "SatoshI", Arial;
 }
 
 @font-face {
   font-family: "integralcf";
-  src: url("/Fontspring-DEMO-integralcf-regular.otf");
+  src: url("/fonts/Fontspring-DEMO-integralcf-regular.otf") format("opentype");
+  font-weight: 100 900;
+  font-style: normal;
 }
-
 @font-face {
   font-family: "Satoshi";
-  src: url("/Satoshi-Regular.otf");
+  src: url("/fonts/Satoshi-Regular.otf") format("opentype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+@layer utilities {
+  .font-noto {
+    font-family: "integralcf";
+  }
+  .font-satoshi {
+    font-family: "Satoshi";
+  }
 }

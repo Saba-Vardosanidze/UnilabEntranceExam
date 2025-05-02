@@ -77,7 +77,9 @@ const ProductDetail = () => {
         </div>
         <div>
           <div className="mt-[20px] lg:mt-[0px]">
-            <p className="font-bold text-[24px] lg:text-[40px]">{card.name}</p>
+            <p className="font-noto font-bold text-[24px] lg:text-[40px]">
+              {card.name}
+            </p>
             <div className="flex items-center gap-x-[11px] lg:gap-x-[16px] mt-[12px] lg:mt-[14px]">
               <img
                 className="h-[16px] lg:h-[24px] lg:min-h-[18px]"

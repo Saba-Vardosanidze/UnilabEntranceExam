@@ -17,7 +17,7 @@ const Selling = () => {
   return (
     <div id="sale" className="flex flex-col items-center">
       <div className="flex flex-col items-center lg:px-[100px] pl-[16px] w-full max-w-[1440px]">
-        <h2 className="mt-[40px] lg:mt-[64px] mb-[32px] font-bold text-[32px] lg:text-[48px]">
+        <h2 className="mt-[40px] lg:mt-[64px] mb-[32px] font-noto font-bold text-[32px] lg:text-[48px]">
           top selling
         </h2>
         <div
