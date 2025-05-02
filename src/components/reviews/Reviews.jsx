@@ -76,11 +76,11 @@ const Reviews = () => {
         </div>
         <div className="flex justify-end items-center gap-[8px] lg:gap-[10px] w-full max-w-[190px] lg:max-w-[354px]">
           <button className="flex justify-center items-center bg-[var(--grayColorForInput)] rounded-full w-[40px] h-[40px] cursor-pointer">
-            <img src="./images/svg/filterIcon.svg" alt="filterIcon" />
+            <img src="/images/svg/filterIcon.svg" alt="filterIcon" />
           </button>
           <div className="hidden lg:flex justify-between items-center bg-[var(--grayColorForInput)] px-[20px] rounded-[62px] w-full max-w-[120px] min-h-[48px] rotate-[62px] cursor-pointer">
             <p className="font-medium">Latest</p>
-            <img src="./images/svg/downArow.svg" alt="downArowButton" />
+            <img src="/images/svg/downArow.svg" alt="downArowButton" />
           </div>
           <Link
             to="/createreview"
@@ -107,7 +107,7 @@ const Reviews = () => {
                 />
                 <img
                   className="hidden lg:flex"
-                  src="./images/svg/moreInfo.svg"
+                  src="/images/svg/moreInfo.svg"
                   alt="moreInfo"
                 />
               </div>
@@ -115,7 +115,7 @@ const Reviews = () => {
                 <p className="font-bold lg:text-[20px]">
                   {eachElements.userName}
                 </p>
-                <img src="./images/svg/verification.svg" alt="verification" />
+                <img src="/images/svg/verification.svg" alt="verification" />
               </div>
               <p className="mt-[8px] lg:mt-[12px] min-h-[120px] lg:min-h-[66px] text-[14px] text-[var(--colorBlackOpacity)] lg:text-[16px]">
                 {eachElements.description}

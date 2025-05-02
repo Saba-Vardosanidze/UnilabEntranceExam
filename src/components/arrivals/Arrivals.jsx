@@ -17,7 +17,7 @@ const Arrivals = () => {
   return (
     <div id="arrival" className="flex flex-col items-center">
       <div className="flex flex-col items-center lg:px-[100px] pl-[16px] w-full max-w-[1440px]">
-        <h2 className="mt-[50px] lg:mt-[72px] mb-[32px] font-bold text-[32px] lg:text-[48px]">
+        <h2 className="mt-[50px] lg:mt-[72px] mb-[32px] font-noto font-bold text-[32px] lg:text-[48px]">
           NEW ARRIVALS
         </h2>
         <div
@@ -29,7 +29,7 @@ const Arrivals = () => {
               .filter((eachElement) => eachElement.id <= 4)
               .map((eachElement) => (
                 <div key={eachElement.id} className="embla__slide">
-                  <Link to="/product">
+                  <Link to={`/product/${eachElement.id}`}>
                     <div className="flex justify-center items-center bg-[var(--productContainerColor)] hover:bg-[var(--productContainerColorHover)] rounded-[14px] w-[198px] lg:w-[295px] h-[200px] lg:min-h-[298px] transition-all duration-300 ease-in-out cursor-pointer">
                       <img src={eachElement.image} alt={eachElement.name} />
                     </div>

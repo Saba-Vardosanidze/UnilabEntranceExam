@@ -8,15 +8,15 @@ import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   return (
-    <>
+    <div className="font-satoshi">
       <ToastContainer />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/product" element={<Product />} />
+        <Route path="/product/:id" element={<Product />} />
         <Route path="/createreview" element={<CreateReview />} />
         <Route path="/category" element={<Category />} />
       </Routes>
-    </>
+    </div>
   );
 };
 

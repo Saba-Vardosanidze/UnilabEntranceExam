@@ -27,13 +27,13 @@ const Header = () => {
           <button className="lg:hidden" onClick={toggleBurgerMenu}>
             <img
               className="w-[24px] h-[24px] object-contain shrink-0"
-              src="./images/svg/burgerMenu.svg"
+              src="/images/svg/burgerMenu.svg"
               alt="burgerMenu Button"
             />
           </button>
           <Link to="/">
             <img
-              src="./images/svg/Logo.svg"
+              src="/images/svg/Logo.svg"
               alt="site Logo"
               className="w-[126px] lg:w-[160px] h-[18px] lg:h-[22px] object-contain shrink-0"
             />
@@ -47,7 +47,7 @@ const Header = () => {
             >
               <a to="#">Shop</a>
               <motion.img
-                src="images/svg/downArow.svg"
+                src="/images/svg/downArow.svg"
                 alt="CaretDown"
                 animate={isServicesOpen ? "open" : "closed"}
                 variants={{
@@ -113,7 +113,7 @@ const Header = () => {
             className={`top-[12px] left-[16px] absolute hidden lg:flex lg:${
               searchValue ? "hidden" : "flex"
             }`}
-            src="./images/svg/search-icon.svg"
+            src="/images/svg/search-icon.svg"
             alt="search icon"
           />
 
@@ -125,7 +125,7 @@ const Header = () => {
               className={`w-[20px] h-[20px]  ${
                 searchValue ? "block" : "hidden"
               }`}
-              src="./images/svg/xIcon.svg"
+              src="/images/svg/xIcon.svg"
               alt="close icon"
             />
           </button>
@@ -133,7 +133,7 @@ const Header = () => {
         <div className="flex gap-[12px] lg:gap-[14px] w-[96px] lg:w-[62px] h-[24px] object-contain shrink-0">
           <button className="lg:hidden cursor-pointer">
             <img
-              src="./images/svg/searchIcon.svg"
+              src="/images/svg/searchIcon.svg"
               alt="search Button"
               className="w-[24px] h-[24px] object-contain shrink-0"
             />
@@ -141,14 +141,14 @@ const Header = () => {
           <button className="cursor-pointer">
             <img
               className="w-[24px] h-[24px] object-contain shrink-0"
-              src="./images/svg/shopIcon.svg"
+              src="/images/svg/shopIcon.svg"
               alt="shoping Button"
             />
           </button>
           <button className="cursor-pointer">
             <img
               className="w-[24px] h-[24px] object-contain shrink-0"
-              src="./images/svg/Profile.svg"
+              src="/images/svg/Profile.svg"
               alt="Profile Button"
             />
           </button>
@@ -163,7 +163,7 @@ const Header = () => {
           className="top-0 left-0 z-50 fixed flex flex-col gap-6 bg-white shadow-lg p-[24px] w-2/3 h-full"
         >
           <button onClick={toggleBurgerMenu} className="w-[24px] h-[24px]">
-            <img src="./images/svg/CloseBTN.svg" alt="close menu" />
+            <img src="/images/svg/CloseBTN.svg" alt="close menu" />
           </button>
 
           <nav className="flex flex-col gap-4 mt-8">
@@ -182,7 +182,7 @@ const Header = () => {
                   <div className="flex gap-[7px]">
                     <a to="#">Shop</a>
                     <motion.img
-                      src="images/svg/Caret down.svg"
+                      src="/images/svg/Caret down.svg"
                       alt="CaretDown"
                       animate={isServicesOpen ? "open" : "closed"}
                       variants={{
