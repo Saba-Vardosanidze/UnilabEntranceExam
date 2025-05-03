@@ -55,7 +55,7 @@ const Selling = () => {
                     </div>
                     <div className="flex items-center gap-x-[5px]">
                       <p className="font-bold text-[20px] lg:text-[24px]">
-                        {eachElement.price}
+                        {`$${eachElement.price}`}
                       </p>
                       <p className="font-bold text-[20px] text-[var(--oldPrice)] lg:text-[24px] line-through">
                         {eachElement.oldPrice}

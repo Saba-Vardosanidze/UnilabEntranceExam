@@ -15,9 +15,16 @@ const ProductDetail = () => {
 
   const [selectedColor, setSelectedColor] = useState(null);
   const [selectedSize, setSelectedSize] = useState(null);
-  const [addItem, setAddItem] = useState(0);
+  const [addItem, setAddItem] = useState(1);
+  const [gatheringprice, setGatheringPrice] = useState(0);
 
   const card = data?.find((eachElement) => eachElement.id === Number(id));
+
+  useEffect(() => {
+    if (card) {
+      setGatheringPrice(card.price * addItem);
+    }
+  }, [card, addItem]);
 
   useEffect(() => {
     if (!isLoading && !isError && data && !card) {
@@ -101,7 +108,7 @@ const ProductDetail = () => {
             </div>
             <div className="flex items-center gap-x-[10px] mt-[12px] lg:mt-[14px]">
               <p className="font-bold text-[24px] lg:text-[32px]">
-                {card.price}
+                {`$${gatheringprice}`}
               </p>
               <p className="font-bold text-[24px] text-[var(--oldPrice)] lg:text-[32px] line-through">
                 {card.oldPrice}
