@@ -3,10 +3,16 @@ import { fetchCards } from "../../api/api";
 import { useState } from "react";
 import Filter from "../filter/Filter";
 import { Link } from "react-router-dom";
+import { motion } from "motion/react";
 
 const AllProduct = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedType, setSelectedType] = useState(null);
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
+
+  const toggleFilter = () => {
+    setIsFilterOpen((prev) => !prev);
+  };
 
   const { data, isLoading, error } = useQuery({
     queryKey: ["cards"],
@@ -31,7 +37,24 @@ const AllProduct = () => {
     <div className="flex flex-col m-auto px-[16px] lg:px-[100px] w-full max-w-[1440px]">
       <div className="bg-[var(--colorBlackborder)] mb-[24px] w-full h-[1px]"></div>
       <div className="flex justify-between">
-        <Filter onTypeSelect={setSelectedType} />
+        <div className="hidden lg:flex flex-col">
+          <div className="flex gap-[6px] mb-[24px]">
+            <div className="flex">
+              <Link to="/">
+                <p className="text-[14px] text-[var(--colorBlackOpacity)]">
+                  Home
+                </p>
+              </Link>
+              <img src="images/svg/rightArrow.svg" alt="arrow" />
+            </div>
+            <div className="flex">
+              <p className="text-[14px] text-[var(--colorBlack)]">Casual</p>
+            </div>
+          </div>
+          <div className="hidden lg:flex">
+            <Filter onTypeSelect={setSelectedType} />
+          </div>
+        </div>
         <div className="flex flex-wrap justify-center gap-x-[20px] gap-y-[36px] lg:mt-[46px] w-full max-w-[925px]">
           <div className="flex justify-between items-center lg:items-end w-full">
             <p className="font-bold text-[24px] lg:text-[32px]">Casual</p>
@@ -48,7 +71,10 @@ const AllProduct = () => {
                   <img src="./images/svg/downArow.svg" alt="ArrowIcon" />
                 </div>
                 <div className="lg:hidden fex">
-                  <button className="flex justify-center items-center bg-[var(--grayColorForInput)] rounded-full w-[40px] h-[40px] cursor-pointer">
+                  <button
+                    onClick={toggleFilter}
+                    className="flex justify-center items-center bg-[var(--grayColorForInput)] rounded-full w-[40px] h-[40px] cursor-pointer"
+                  >
                     <img src="./images/svg/filterIcon.svg" alt="filterIcon" />
                   </button>
                 </div>
@@ -151,6 +177,17 @@ const AllProduct = () => {
           </div>
         </div>
       </div>
+      {isFilterOpen && (
+        <motion.div
+          initial={{ y: "100%" }}
+          animate={{ y: 0 }}
+          exit={{ y: "100%" }}
+          transition={{ duration: 0.3 }}
+          className="lg:hidden z-50 fixed inset-0 flex justify-center bg-white overflow-y-auto"
+        >
+          <Filter />
+        </motion.div>
+      )}
     </div>
   );
 };

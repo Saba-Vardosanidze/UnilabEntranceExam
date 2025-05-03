@@ -22,18 +22,7 @@ const Filter = ({ onTypeSelect }) => {
   };
 
   return (
-    <div className="hidden lg:flex flex-col w-full max-w-[295px]">
-      <div className="flex gap-[6px] mb-[24px]">
-        <div className="flex">
-          <Link to="/">
-            <p className="text-[14px] text-[var(--colorBlackOpacity)]">Home</p>
-          </Link>
-          <img src="images/svg/rightArrow.svg" alt="arrow" />
-        </div>
-        <div className="flex">
-          <p className="text-[14px] text-[var(--colorBlack)]">Casual</p>
-        </div>
-      </div>
+    <div className="lg:flex flex-col w-full max-w-[295px]">
       <div className="px-[24px] py-[20px] border border-[var(--colorBlackborder)] rounded-[20px] w-full max-w-[295px]">
         <div className="flex justify-between items-center mb-[24px]">
           <p className="font-bold text-[20px]">Filters</p>
