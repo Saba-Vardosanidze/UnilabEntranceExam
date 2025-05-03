@@ -7,9 +7,19 @@ import {
 } from "../../data/choseColor";
 import PriceRangeSlider from "../PriceRangeSlider/PriceRangeSlider";
 import { useState } from "react";
-const Filter = () => {
+
+const Filter = ({ onTypeSelect }) => {
   const [selectedSize, setSelectedSize] = useState(null);
   const [selectedColor, setSelectedColor] = useState(null);
+  const [selectedType, setSelectedType] = useState(null);
+
+  const handleTypeClick = (type) => {
+    const newType = type.toLowerCase();
+    setSelectedType(newType);
+    if (onTypeSelect) {
+      onTypeSelect(newType);
+    }
+  };
 
   return (
     <div className="hidden lg:flex flex-col w-full max-w-[295px]">
@@ -27,18 +37,19 @@ const Filter = () => {
       <div className="px-[24px] py-[20px] border border-[var(--colorBlackborder)] rounded-[20px] w-full max-w-[295px]">
         <div className="flex justify-between items-center mb-[24px]">
           <p className="font-bold text-[20px]">Filters</p>
-          <img
-            src="./images/svg/filter2.svg"
-            alt="filter
-        "
-          />
+          <img src="./images/svg/filter2.svg" alt="filter" />
         </div>
         <div className="bg-[var(--colorBlackborder)] w-full h-[1px]"></div>
         <div className="flex flex-col gap-[20px] my-[24px]">
           {categories.map((category, index) => (
             <div
               key={index}
-              className="flex justify-between items-center h-[16px] text-[var(--colorBlackOpacity)] hover:text-[var(--colorBlack)] transition-all duration-300 ease-in cursor-pointer"
+              className={`flex justify-between items-center h-[16px] ${
+                selectedType === category.label.toLowerCase()
+                  ? "text-[var(--colorBlack)]"
+                  : "text-[var(--colorBlackOpacity)]"
+              } hover:text-[var(--colorBlack)] transition-all duration-300 ease-in cursor-pointer`}
+              onClick={() => handleTypeClick(category.label)}
             >
               <p>{category.label}</p>
               <img src="images/svg/rightArrow.svg" alt="arrow" />
@@ -57,7 +68,7 @@ const Filter = () => {
             {dreesColors.map((eachElement) => (
               <div
                 key={eachElement.id}
-                className={`${eachElement.color} rounded-full lg:w-[37px] lg:h-[37px]  cursor-pointer relative`}
+                className={`${eachElement.color} rounded-full lg:w-[37px] lg:h-[37px] cursor-pointer relative`}
                 onClick={() => setSelectedColor(eachElement.id)}
               >
                 {selectedColor === eachElement.id && (

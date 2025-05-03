@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 
 const AllProduct = () => {
   const [currentPage, setCurrentPage] = useState(1);
+  const [selectedType, setSelectedType] = useState(null);
+
   const { data, isLoading, error } = useQuery({
     queryKey: ["cards"],
     queryFn: fetchCards,
@@ -14,21 +16,28 @@ const AllProduct = () => {
   if (isLoading) return <p>Loading ...</p>;
   if (error) return <p>Error: {error.message}</p>;
 
-  const filterData = data.filter((eachElement) =>
-    currentPage === 1 ? eachElement.id <= 9 : eachElement.id > 9
-  );
+  const filterData = data.filter((eachElement) => {
+    const pageFilter =
+      currentPage === 1 ? eachElement.id <= 9 : eachElement.id > 9;
+    if (!selectedType) return pageFilter;
+
+    return (
+      pageFilter &&
+      eachElement.type.toLowerCase().startsWith(selectedType.toLowerCase())
+    );
+  });
 
   return (
     <div className="flex flex-col m-auto px-[16px] lg:px-[100px] w-full max-w-[1440px]">
       <div className="bg-[var(--colorBlackborder)] mb-[24px] w-full h-[1px]"></div>
       <div className="flex justify-between">
-        <Filter />
+        <Filter onTypeSelect={setSelectedType} />
         <div className="flex flex-wrap justify-center gap-x-[20px] gap-y-[36px] lg:mt-[46px] w-full max-w-[925px]">
           <div className="flex justify-between items-center lg:items-end w-full">
             <p className="font-bold text-[24px] lg:text-[32px]">Casual</p>
             <div className="flex items-center gap-[8px]">
               <p className="text-[14px] text-[var(--colorBlackOpacity)] lg:text-[16px]">
-                Showing 1-10 of 100 Products
+                Showing {filterData.length} of {data.length} Products
               </p>
               <div className="lg:flex gap-[4px]">
                 <p className="hidden lg:flex text-[14px] text-[var(--colorBlackOpacity)] lg:text-[16px]">
@@ -111,7 +120,7 @@ const AllProduct = () => {
                 onClick={() => setCurrentPage(1)}
                 className={`${
                   currentPage === 1
-                    ? " bg-[var(--pageNumerationColor)] text-[var(--colorBlack)]"
+                    ? "bg-[var(--pageNumerationColor)] text-[var(--colorBlack)]"
                     : "text-[var(--paragraph-color)]"
                 } rounded-[8px] px-[15px] py-[8px] cursor-pointer lg:px-[17px] lg:py-[10px]`}
               >
@@ -121,9 +130,9 @@ const AllProduct = () => {
                 onClick={() => setCurrentPage(2)}
                 className={`${
                   currentPage === 2
-                    ? " bg-[var(--pageNumerationColor)] text-[var(--colorBlack)]"
+                    ? "bg-[var(--pageNumerationColor)] text-[var(--colorBlack)]"
                     : "text-[var(--paragraph-color)]"
-                } rounded-[8px] px-[15px] py-[8px]  cursor-pointer lg:px-[17px] lg:py-[10px]`}
+                } rounded-[8px] px-[15px] py-[8px] cursor-pointer lg:px-[17px] lg:py-[10px]`}
               >
                 2
               </button>
