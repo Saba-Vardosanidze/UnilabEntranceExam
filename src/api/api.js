@@ -33,10 +33,24 @@ export const createComent = async (newBlog) => {
 };
 
 export const registerUser = async (newUser) => {
-  const response = await fetch(`${API_BASETWO}/login`, {
+  const response = await fetch(`${API_BASETWO}/registration`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(newUser),
+  });
+
+  if (!response.ok) {
+    throw new Error("Failed to register user");
+  }
+
+  return response.json();
+};
+
+export const lgoinUser = async (credentials) => {
+  const response = await fetch(`${API_BASETWO}/login`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(credentials),
   });
 
   if (!response.ok) {
