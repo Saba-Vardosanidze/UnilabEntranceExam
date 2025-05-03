@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const PromoBanner = () => {
   const [promoteOff, setPromoteOff] = useState(true);
@@ -11,12 +12,13 @@ const PromoBanner = () => {
           <p className="flex mr-[5px] text-[12px] text-[var(--colorWhite)] lg:text-[14px]">
             Sign up and get 20% off to your first order.
           </p>
-          <a
+          <Link
+            to="/registration"
             className="border-b border-b-[[var(--colorWhite)]] h-[23px] text-[var(--colorWhite)]"
             href="#"
           >
             Sign Up Now
-          </a>
+          </Link>
         </div>
         <button
           onClick={() => setPromoteOff(false)}
