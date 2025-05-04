@@ -24,7 +24,7 @@ const Slider = () => {
   return (
     <div className="m-auto mt-[50px] lg:mt-[80px] max-w-[1440px]">
       <div className="flex justify-between items-end mb-6 px-[16px] lg:px-[100px]">
-        <h2 className="font-bold text-[32px] lg:text-[48px]">
+        <h2 className="font-noto font-bold text-[32px] lg:text-[48px]">
           OUR HAPPY CUSTOMERS
         </h2>
         <div className="flex gap-[16px] w-[64px] object-contain shrink-0">

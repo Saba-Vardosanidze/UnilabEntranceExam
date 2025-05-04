@@ -31,7 +31,7 @@ const NewPosts = () => {
     <div>
       <form
         onSubmit={handleSubmit(submitForm)}
-        className="flex flex-col items-center shadow-[0px_4px_4px_0px_#00000040] m-auto mt-[50px] rounded-[12px] w-full max-w-[400px] min-h-[565px]"
+        className="flex flex-col items-center shadow-[0px_4px_4px_0px_#00000040] m-auto mt-[50px] rounded-[12px] w-full max-w-[400px] min-h-[565px] font-montserrant"
       >
         <div className="flex flex-col gap-[5px] mb-[20px] w-full max-w-[350px]">
           <label htmlFor="name" className="font-bold text-[12px]">

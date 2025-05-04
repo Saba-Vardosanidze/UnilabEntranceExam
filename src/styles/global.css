@@ -36,11 +36,20 @@
   font-weight: 100 900;
   font-style: normal;
 }
+@font-face {
+  font-family: "Montserrant";
+  src: url("/fonts/Montserrat-Regular.ttf") format("opentype");
+  font-weight: 100 900;
+  font-style: normal;
+}
 @layer utilities {
   .font-noto {
     font-family: "integralcf";
   }
   .font-satoshi {
     font-family: "Satoshi";
+  }
+  .font-montserrant {
+    font-family: "Montserrant";
   }
 }
