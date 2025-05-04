@@ -55,7 +55,7 @@ const AllProduct = () => {
             <Filter onTypeSelect={setSelectedType} />
           </div>
         </div>
-        <div className="flex flex-wrap justify-center gap-x-[20px] gap-y-[36px] lg:mt-[46px] w-full max-w-[925px]">
+        <div className="flex flex-wrap justify-center gap-x-[10px] gap-y-[36px] lg:mt-[46px] w-full max-w-[925px]">
           <div className="flex justify-between items-center lg:items-end w-full">
             <p className="font-bold text-[24px] lg:text-[32px]">Casual</p>
             <div className="flex items-center gap-[8px]">

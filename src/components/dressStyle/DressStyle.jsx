@@ -1,5 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 
 const DressStyle = () => {
   const ref = useRef(null);
@@ -20,10 +21,16 @@ const DressStyle = () => {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <img src="images/png/Adesigne.png" alt="designe" />
-            <p className="top-[16px] left-[24px] absolute font-bold text-[24px]">
-              Casual
-            </p>
+            <Link to="/category">
+              <img
+                className="h-full"
+                src="images/png/Adesigne.png"
+                alt="designe"
+              />
+              <p className="top-[16px] left-[24px] absolute font-bold text-[24px]">
+                Casual
+              </p>
+            </Link>
           </motion.div>
           <motion.div
             className="relative flex justify-end bg-[var(--colorWhite)] hover:bg-[var(--colorWhiteHover)] rounded-[20px] max-w-[310px] lg:max-w-[684px] min-h-[190px] lg:min-h-[289px] overflow-hidden cursor-pointer"
@@ -32,10 +39,16 @@ const DressStyle = () => {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 1, ease: "easeOut" }}
           >
-            <img src="images/png/Bdesigne.png" alt="designe" />
-            <p className="top-[16px] left-[24px] absolute font-bold text-[24px]">
-              Formal
-            </p>
+            <Link to="/category">
+              <img
+                className="h-full"
+                src="images/png/Bdesigne.png"
+                alt="designe"
+              />
+              <p className="top-[16px] left-[24px] absolute font-bold text-[24px]">
+                Formal
+              </p>
+            </Link>
           </motion.div>
           <motion.div
             className="relative flex justify-end bg-[var(--colorWhite)] hover:bg-[var(--colorWhiteHover)] rounded-[20px] w-full max-w-[310px] lg:max-w-[684px] min-h-[190px] lg:min-h-[289px] overflow-hidden cursor-pointer"
@@ -43,10 +56,16 @@ const DressStyle = () => {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 1, ease: "easeOut" }}
           >
-            <img src="images/png/Cdesigne.png" alt="designe" />
-            <p className="top-[16px] left-[24px] absolute font-bold text-[24px]">
-              Party
-            </p>
+            <Link to="/category">
+              <img
+                className="h-full"
+                src="images/png/Cdesigne.png"
+                alt="designe"
+              />
+              <p className="top-[16px] left-[24px] absolute font-bold text-[24px]">
+                Party
+              </p>
+            </Link>
           </motion.div>
           <motion.div
             className="relative flex justify-end bg-[var(--colorWhite)] hover:bg-[var(--colorWhiteHover)] rounded-[20px] w-full max-w-[310px] lg:max-w-[407px] h-[190px] lg:min-h-[289px] overflow-hidden cursor-pointer"
@@ -55,10 +74,16 @@ const DressStyle = () => {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <img src="images/png/Ddesigne.png" alt="designe" />
-            <p className="top-[16px] left-[24px] absolute font-bold text-[24px]">
-              Gym
-            </p>
+            <Link to="/cagegory">
+              <img
+                className="h-full"
+                src="images/png/Ddesigne.png"
+                alt="designe"
+              />
+              <p className="top-[16px] left-[24px] absolute font-bold text-[24px]">
+                Gym
+              </p>
+            </Link>
           </motion.div>
         </div>
       </div>
