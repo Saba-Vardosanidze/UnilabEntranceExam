@@ -55,7 +55,7 @@ const Slider = () => {
               <div>
                 <img
                   className="w-full max-w-[118px] lg:max-w-[138px]"
-                  src={eachElement.rate}
+                  src={eachElement.rateImg}
                   alt="Customer rate"
                 />
                 <div>

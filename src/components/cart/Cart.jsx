@@ -26,7 +26,7 @@ const Cart = () => {
     setPluseItems(0);
   }
 
-  const { cartItems, removeFromCart, clearCart } = useCart();
+  const { cartItems, removeFromCart } = useCart();
   return (
     <div className="m-auto px-[16px] lg:px-[100px] max-w-[1440px]">
       <div className="bg-[var(--colorBlackborder)] m-auto h-[1px]"></div>
