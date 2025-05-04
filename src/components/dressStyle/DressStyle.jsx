@@ -74,7 +74,7 @@ const DressStyle = () => {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <Link to="/cagegory">
+            <Link to="/category">
               <img
                 className="h-full"
                 src="images/png/Ddesigne.png"
