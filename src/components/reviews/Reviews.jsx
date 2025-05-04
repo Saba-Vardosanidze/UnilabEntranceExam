@@ -102,7 +102,7 @@ const Reviews = () => {
               <div className="flex justify-between items-center cursor-pointer">
                 <img
                   className="min-h-[19px] lg:min-h-[22px]"
-                  src={eachElements.rate}
+                  src={eachElements.rateImg}
                   alt="rateStars"
                 />
                 <img
