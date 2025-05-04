@@ -3,8 +3,10 @@ import { Link, useParams, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { fetchCards } from "../../api/api";
 import { choseColor, chooseSize } from "../../data/choseColor";
+import { useCart } from "../../context/CartContext";
 
 const ProductDetail = () => {
+  const { addCart } = useCart();
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -12,6 +14,10 @@ const ProductDetail = () => {
     queryKey: ["product", id],
     queryFn: fetchCards,
   });
+
+  const addCardItem = () => {
+    addCart(card);
+  };
 
   const [selectedColor, setSelectedColor] = useState(null);
   const [selectedSize, setSelectedSize] = useState(null);
@@ -193,7 +199,10 @@ const ProductDetail = () => {
                 <img src="/images/svg/pluse.svg" alt="addCardButton" />
               </button>
             </div>
-            <button className="bg-[var(--colorBlack)] rounded-[62px] w-full max-w-[236px] lg:max-w-[400px] min-h-[44px] lg:min-h-[52px] text-[14px] text-[var(--colorWhite)] lg:text-[16px] cursor-pointer">
+            <button
+              onClick={addCardItem}
+              className="bg-[var(--colorBlack)] rounded-[62px] w-full max-w-[236px] lg:max-w-[400px] min-h-[44px] lg:min-h-[52px] text-[14px] text-[var(--colorWhite)] lg:text-[16px] cursor-pointer"
+            >
               Add to Cart
             </button>
           </div>

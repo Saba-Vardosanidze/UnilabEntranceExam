@@ -138,13 +138,16 @@ const Header = () => {
               className="w-[24px] h-[24px] object-contain shrink-0"
             />
           </button>
-          <button className="cursor-pointer">
-            <img
-              className="w-[24px] h-[24px] object-contain shrink-0"
-              src="/images/svg/shopIcon.svg"
-              alt="shoping Button"
-            />
-          </button>
+          <Link to={"/cart"}>
+            <button className="cursor-pointer">
+              <img
+                className="w-[24px] h-[24px] object-contain shrink-0"
+                src="/images/svg/shopIcon.svg"
+                alt="shoping Button"
+              />
+            </button>
+          </Link>
+
           <button className="cursor-pointer">
             <img
               className="w-[24px] h-[24px] object-contain shrink-0"
