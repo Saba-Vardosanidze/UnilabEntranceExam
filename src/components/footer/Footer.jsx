@@ -26,22 +26,22 @@ const Footer = ({ children }) => {
               </p>
             </div>
             <div className="flex gap-[12px]">
-              <a href="https://x.com/">
+              <a href="https://x.com/" aria-label="Twitter">
                 <div className="flex justify-center items-center bg-[var(--colorWhite)] hover:bg-[var(--colorBlack)] border border-[var(--colorBlackborder)] rounded-[100%] w-[28px] h-[28px] transition-all duration-300 cursor-pointer">
                   <FaTwitter className="fill-[var(--colorBlack)] hover:fill-[var(--colorWhite)] p-[7px] w-[28px] h-[28px] transition-all duration-300 cursor-pointer" />
                 </div>
               </a>
-              <a href="https://facebook.com/">
+              <a href="https://facebook.com/" aria-label="Facebook">
                 <div className="flex justify-center items-center bg-[var(--colorWhite)] hover:bg-[var(--colorBlack)] border border-[var(--colorBlackborder)] rounded-[100%] w-[28px] h-[28px] transition-all duration-300 cursor-pointer">
                   <FaFacebookF className="fill-[var(--colorBlack)] hover:fill-[var(--colorWhite)] p-[7px] w-[28px] h-[28px] transition-all duration-300 cursor-pointer" />
                 </div>
               </a>
-              <a href="https://instagram.com/">
+              <a href="https://instagram.com/" aria-label="Instagram">
                 <div className="flex justify-center items-center bg-[var(--colorWhite)] hover:bg-[var(--colorBlack)] border border-[var(--colorBlackborder)] rounded-[100%] w-[28px] h-[28px] transition-all duration-300 cursor-pointer">
                   <FaInstagram className="fill-[var(--colorBlack)] hover:fill-[var(--colorWhite)] p-[7px] w-[28px] h-[28px] transition-all duration-300 cursor-pointer" />
                 </div>
               </a>
-              <a href="https://github.com/">
+              <a href="https://github.com/" aria-label="GitHub">
                 <div className="flex justify-center items-center bg-[var(--colorWhite)] hover:bg-[var(--colorBlack)] border border-[var(--colorBlackborder)] rounded-[100%] w-[28px] h-[28px] transition-all duration-300 cursor-pointer">
                   <FaGithub className="fill-[var(--colorBlack)] hover:fill-[var(--colorWhite)] p-[7px] w-[28px] h-[28px] transition-all duration-300 cursor-pointer" />
                 </div>
