@@ -4,6 +4,16 @@ import { Link } from "react-router-dom";
 
 const Cart = () => {
   const [pluseItems, setPluseItems] = useState(1);
+  const [promo, setPromo] = useState("");
+  const [promoCode, setPromoCode] = useState(416);
+
+  const handleApplyPromo = () => {
+    if (promo === "saba") {
+      setPromoCode(416 - 200);
+    } else {
+      setPromoCode(416);
+    }
+  };
 
   const pluse = () => {
     setPluseItems((prev) => prev + 1);
@@ -16,7 +26,7 @@ const Cart = () => {
     setPluseItems(0);
   }
 
-  const { cartItems } = useCart();
+  const { cartItems, removeFromCart, clearCart } = useCart();
   return (
     <div className="m-auto px-[16px] lg:px-[100px] max-w-[1440px]">
       <div className="bg-[var(--colorBlackborder)] m-auto h-[1px]"></div>
@@ -44,15 +54,14 @@ const Cart = () => {
           </div>
           <div className="border border-[var(--colorBlackborder)] rounded-[20px] w-full lg:w-full max-w-[358px] lg:max-w-[715px] min-h-[50px]">
             {cartItems.length === 0 ? (
-              <p>Cart is empty.</p>
+              <p className="mt-[12px] ml-[30px] text-[var(--discountTextColor)]">
+                cart is empty
+              </p>
             ) : (
               <div>
                 {cartItems.map((item) => (
-                  <div className="p-[14px]">
-                    <div
-                      className="flex justify-between mb-[16px] lg:mb-[24px] lg:w-full lg:max-w-[667px]"
-                      key={item.id}
-                    >
+                  <div className="p-[14px]" key={item.id}>
+                    <div className="flex justify-between mb-[16px] lg:mb-[24px] lg:w-full lg:max-w-[667px]">
                       <div className="flex justify-center items-center bg-[var(--productContainerColor)] rounded-[9px] w-full max-w-[99px] lg:max-w-[124px] min-h-[99px] lg:min-h-[124px]">
                         <img src={item.image} alt="productImages" />
                       </div>
@@ -61,11 +70,13 @@ const Cart = () => {
                           <p className="font-bold text-[16px] lg:text-[20px]">
                             {item.name}
                           </p>
-                          <img
-                            className="max-h-[20px] cursor-pointer"
-                            src="/images/svg/trash.svg"
-                            alt="trashButton"
-                          />
+                          <button onClick={() => removeFromCart(item.id)}>
+                            <img
+                              className="max-h-[20px] cursor-pointer"
+                              src="/images/svg/trash.svg"
+                              alt="trashButton"
+                            />
+                          </button>
                         </div>
                         <div className="flex justify-between items-center">
                           <p className="font-bold text-[20px] lg:text-[24px]">
@@ -132,11 +143,14 @@ const Cart = () => {
           <div className="flex flex-col gap-[16px] lg:gap-[20px]">
             <div className="flex justify-between lg:text-[20px]">
               <p>Total</p>
-              <p className="font-bold text-[20px] lg:text-[20px]">$467</p>
+              <p className="font-bold text-[20px] lg:text-[20px]">
+                ${promoCode}
+              </p>
             </div>
             <div className="flex gap-[12px]">
               <div className="relative w-full">
                 <input
+                  onChange={(event) => setPromo(event.target.value)}
                   className="bg-[var(--grayColorForInput)] pl-[46px] rounded-[62px] w-full lg:w-full max-w-[218px] lg:max-w-[326px] min-h-[48px] lg:min-h-[48px]"
                   placeholder="Add promo code"
                   type="text"
@@ -147,7 +161,10 @@ const Cart = () => {
                   alt="discountMark"
                 />
               </div>
-              <button className="flex justify-center items-center bg-[var(--colorBlack)] rounded-[62px] w-full max-w-[88px] lg:max-w-[119px] min-h-[48px] lg:min-h-[48px] text-[var(--colorWhite)]">
+              <button
+                onClick={handleApplyPromo}
+                className="flex justify-center items-center bg-[var(--colorBlack)] rounded-[62px] w-full max-w-[88px] lg:max-w-[119px] min-h-[48px] lg:min-h-[48px] text-[var(--colorWhite)]"
+              >
                 Apply
               </button>
             </div>
