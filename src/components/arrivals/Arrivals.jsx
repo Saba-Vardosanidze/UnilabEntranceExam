@@ -73,14 +73,15 @@ const Arrivals = () => {
               ))}
           </div>
         </div>
-        <button className="flex justify-center items-center hover:bg-[var(--colorBlack)] mt-[24px] lg:mt-[36px] mb-[40px] lg:mb-[64px] border border-[var(--colorBlackborder)] rounded-[62px] w-full max-w-[358px] lg:max-w-[218px] min-h-[46px] lg:min-h-[52px] hover:text-[var(--colorWhite)] transition-all duration-300 ease-in-out cursor-pointer">
+        <button className="flex justify-center items-center hover:bg-[var(--colorBlack)] mt-[24px] lg:mt-[36px] mb-[40px] lg:mb-[64px] border border-[var(--colorBlackborder)] rounded-[62px] w-full max-w-[358px] lg:max-w-[218px] min-h-[48px] hover:text-[var(--colorWhite)] transition-all duration-300 ease-in-out cursor-pointer">
           <Link
             to="/category"
-            className="flex justify-center items-center w-full min-h-[46px]"
+            className="flex justify-center items-center px-4 w-full min-h-[48px]"
           >
             View All
           </Link>
         </button>
+
         <div className="bg-[var(--colorBlackborder)] mt-[40px] mb-[16px] w-full h-[1px]"></div>
       </div>
     </div>
