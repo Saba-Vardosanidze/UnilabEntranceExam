@@ -171,9 +171,11 @@ const Header = () => {
 
           <nav className="flex flex-col gap-4 mt-8">
             <ul className="flex flex-col gap-[32px]">
-              <li className="font-medium text-[var(--paragraph-color)] hover:text-[var(--colorBlack)]">
-                <a href="#">Home</a>
-              </li>
+              <Link to="/">
+                <li className="font-medium text-[var(--paragraph-color)] hover:text-[var(--colorBlack)]">
+                  <a href="#">Home</a>
+                </li>
+              </Link>
               <li className="font-medium text-[var(--paragraph-color)] hover:text-[var(--colorBlack)]">
                 <a href="#">About</a>
               </li>
@@ -230,9 +232,11 @@ const Header = () => {
               </li>
             </ul>
           </nav>
-          <button className="bg-[var(--colorBlack)] mt-[62px] rounded-[10px] max-w-[165px] min-h-[52px] text-[var(--colorWhite)]">
-            Sign Up Now
-          </button>
+          <Link to="/registration">
+            <button className="bg-[var(--colorBlack)] mt-[62px] rounded-[10px] w-full max-w-[165px] min-h-[52px] text-[var(--colorWhite)]">
+              Sign Up Now
+            </button>
+          </Link>
         </motion.div>
       )}
     </header>
