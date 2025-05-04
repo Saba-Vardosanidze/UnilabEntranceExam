@@ -5,8 +5,12 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { useMutation } from "@tanstack/react-query";
 import { lgoinUser } from "../../api/api";
+import { useAuth } from "../../context/AuthContext";
 
 const Login = () => {
+  const { login } = useAuth();
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -16,11 +20,10 @@ const Login = () => {
     resolver: zodResolver(loginSchema),
   });
 
-  const navigate = useNavigate();
-
   const { mutate } = useMutation({
     mutationFn: lgoinUser,
-    onSuccess: () => {
+    onSuccess: (userData) => {
+      login(userData);
       navigate("/");
     },
     onError: () => {

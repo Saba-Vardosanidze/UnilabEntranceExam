@@ -8,6 +8,8 @@ import "react-toastify/dist/ReactToastify.css";
 import Register from "./views/Register";
 import LogInPage from "./views/LogInPage";
 import Complate from "./components/complate/Complate";
+import CartPage from "./views/CartPage";
+import PrivateRoute from "./routes/PrivateRoutes";
 
 const App = () => {
   return (
@@ -21,6 +23,14 @@ const App = () => {
         <Route path="/registration" element={<Register />} />
         <Route path="/login" element={<LogInPage />} />
         <Route path="/complate" element={<Complate />} />
+        <Route
+          path="/cart"
+          element={
+            <PrivateRoute>
+              <CartPage />
+            </PrivateRoute>
+          }
+        />
       </Routes>
     </div>
   );
